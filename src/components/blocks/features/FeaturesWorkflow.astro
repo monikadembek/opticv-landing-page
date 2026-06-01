@@ -1,0 +1,62 @@
+---
+// Features page — "How it all fits together" workflow strip
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import { Icon } from 'astro-icon/components'
+
+const steps = [
+	{
+		icon: 'document-text',
+		title: 'Upload',
+		description: 'Drop in your CV once. We parse it and reuse it across every feature on this page.'
+	},
+	{
+		icon: 'bolt',
+		title: 'Tailor',
+		description:
+			'Paste the job description and OptiCV goes to work — scoring, rewriting, and flagging gaps against that specific role, not a generic template.'
+	},
+	{
+		icon: 'arrow-trending-up',
+		title: 'Export',
+		description:
+			'Edit anything inline, then download a polished, ATS-friendly package: CV, cover letter, and interview prep, ready to send.'
+	}
+]
+---
+
+<Section id="workflow" classes="bg-accent-50 dark:bg-neutral-900/60">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-3xl mx-auto">
+			<h2 class="text-pretty">Seven tools. One workflow. <strong>Zero busywork.</strong></h2>
+			<p class="pb-0 text-lg text-neutral-600 dark:text-neutral-400">
+				Every feature works from the same two inputs — your CV and the job you're chasing, so
+				nothing has to be set up twice.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		{
+			steps.map((step, index) => (
+				<Col span="4" classes="relative">
+					<div class="flex flex-col items-center gap-4 p-8 text-center">
+						<div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-600 shadow-lg">
+							<Icon name={step.icon} class="h-8 w-8 text-white" />
+						</div>
+						<h3 class="font-headings text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
+							{step.title}
+						</h3>
+						<p class="text-base text-neutral-600 dark:text-neutral-400">{step.description}</p>
+					</div>
+					{index < steps.length - 1 && (
+						<div class="absolute right-0 top-1/3 hidden -translate-y-1/2 translate-x-1/2 lg:block">
+							<Icon name="long-arrow-right" class="h-8 w-8 text-primary-400" />
+						</div>
+					)}
+				</Col>
+			))
+		}
+	</Row>
+</Section>
