@@ -1,0 +1,30 @@
+---
+// Components
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/blocks/hero/ATSHero.astro'
+import ATSExplained from '../components/blocks/ats/ATSExplained.astro'
+import StatsBand from '../components/blocks/stats/StatsBand.astro'
+import ATSHowItReads from '../components/blocks/ats/ATSHowItReads.astro'
+import ATSRejectionReasons from '../components/blocks/ats/ATSRejectionReasons.astro'
+import ATSOptiCVSolution from '../components/blocks/ats/ATSOptiCVSolution.astro'
+import ATSFaq from '../components/blocks/ats/ATSFaq.astro'
+import CTA from '../components/blocks/CTA/ATSCTA.astro'
+
+// SEO
+const SEO = {
+	title: 'What is an ATS? — OptiCV',
+	description:
+		"Understand how Applicant Tracking Systems work, why they reject so many CVs, and how OptiCV helps your application get past the filter and in front of a human recruiter."
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero />
+	<ATSExplained />
+	<StatsBand />
+	<ATSHowItReads />
+	<ATSRejectionReasons />
+	<ATSOptiCVSolution />
+	<ATSFaq />
+	<CTA />
+</Layout>

@@ -2,7 +2,9 @@
 
 ## 1. Prepare content for main page
 
-**status** - done
+| Status      | Date Start  | Date End   | Task Type
+| ------------| ----------- | ---------- | ------------
+| **Done**    | 28.05.2025  | 28.05.2026 | Planning
 
 - plan with Claude Code what should be on main page of landing page
 
@@ -63,27 +65,28 @@ https://foxi.netlify.app
 
 ## 7. ATS page
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 01.06.2025  | 01.06.2026 | Feature coding
 
-- make ATS page where you explain what it is 
-and why it is important to optimize your CV for ATS systems
+- make ATS page where you explain what it is and why it is important to optimize your CV for ATS systems
 
 ---
 
-## 8. Contact page - make the form send the email
+## 8. Pricing page
+
+**status** - todo
+
+- show available plans and what is included in them
+
+---
+
+## 9. Contact page - make the form send the email
 
 **status** - todo
 
 - use the contact page from template
 - connect form with server / email 
-
----
-
-## 9. Pricing page
-
-**status** - todo
-
-- show available plans and what is included in them
 
 ---
 

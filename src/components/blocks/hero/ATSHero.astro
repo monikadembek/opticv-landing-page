@@ -1,0 +1,32 @@
+---
+// ATS Page Hero
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Button from '../../ui/Button.astro'
+---
+
+<Section id="ats-intro" padding="both" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center">
+			<h1 class="text-pretty">
+				The <strong class="text-primary-600">robot reading your CV</strong> before any human does.
+			</h1>
+			<p class="pb-2 text-xl text-neutral-600 dark:text-neutral-300">
+				Most companies use an ATS to filter applications automatically. Here's what it is, how it
+				decides, and how to make sure your CV gets through.
+			</p>
+			<p class="pb-6 text-lg text-neutral-500 dark:text-neutral-400">
+				Once you understand the ATS, beating it is simple and OptiCV does the hard part for you.
+			</p>
+			<div class="flex flex-wrap items-center justify-center gap-4">
+				<Button size="lg" link="/" style="primary">Optimize my CV</Button>
+				<Button size="lg" link="/" style="neutral">Sign in</Button>
+			</div>
+			<p class="mt-4 text-sm text-neutral-400">Free to start · No credit card needed</p>
+		</Col>
+		<Col span="2" />
+	</Row>
+</Section>

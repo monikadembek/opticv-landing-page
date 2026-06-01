@@ -1,0 +1,73 @@
+---
+// ATS How It Reads — 4-point mechanics section
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import { Icon } from 'astro-icon/components'
+
+const points = [
+	{
+		number: '1',
+		icon: 'document-text',
+		title: 'ATS parses your structure.',
+		description:
+			'The ATS breaks your CV into fields: name, contact, experience, education, skills. Unusual layouts, tables, columns, headers/footers, and images can confuse it, so details get lost or mis-filed.'
+	},
+	{
+		number: '2',
+		icon: 'eye',
+		title: 'ATS matches keywords.',
+		description:
+			"It compares the words in your CV against the words in the job description: job titles, skills, tools, qualifications. Miss the language the role uses, and you score low even if you're qualified."
+	},
+	{
+		number: '3',
+		icon: 'document-chart-bar',
+		title: 'ATS scores and ranks you.',
+		description:
+			'Based on that match, the ATS assigns a relevance score and sorts candidates. Recruiters often only review the top of the pile.'
+	},
+	{
+		number: '4',
+		icon: 'bell-alert',
+		title: 'ATS flags the gaps.',
+		description:
+			"Missing sections, unparseable dates, or required keywords you didn't include can drop you out of contention before a human sees a word."
+	}
+]
+---
+
+<Section id="ats-how-it-reads" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">What the ATS <strong>actually looks at.</strong></h2>
+			<p class="pb-0 text-lg text-neutral-600 dark:text-neutral-400">
+				It's not magic, it's pattern-matching and once you know the patterns, you can work with
+				them.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		{
+			points.map((point) => (
+				<Col span="6">
+					<div class="flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-8 dark:border-neutral-700 dark:bg-neutral-800">
+						<div class="flex items-center gap-4">
+							<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/40">
+								<Icon name={point.icon} class="h-6 w-6 text-primary-600 dark:text-primary-400" />
+							</div>
+							<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white">
+								{point.number}
+							</div>
+						</div>
+						<h3 class="mb-0 font-headings text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+							{point.title}
+						</h3>
+						<p class="text-base text-neutral-600 dark:text-neutral-400">{point.description}</p>
+					</div>
+				</Col>
+			))
+		}
+	</Row>
+</Section>
