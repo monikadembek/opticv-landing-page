@@ -1,0 +1,77 @@
+---
+// ATS Solution — how OptiCV gets you through
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import { Icon } from 'astro-icon/components'
+
+const features = [
+	{
+		title: 'Resume Autopsy',
+		description:
+			'spots the formatting, structure, and labeling issues that confuse an ATS, ranked by severity, each with a fix.'
+	},
+	{
+		title: 'Keyword Gap Analysis',
+		description:
+			'scores your CV against the exact job description and highlights the missing keywords before you apply.'
+	},
+	{
+		title: 'Stronger Bullet Points and Summary Rewrites',
+		description:
+			'put the right language on the page in a way that reads well to humans and machines.'
+	},
+	{
+		title: 'Clean, ATS-friendly export',
+		description: 'gives you a CV in PDF or DOCX that parses correctly, no risky layouts.'
+	}
+]
+---
+
+<Section id="ats-opticv-solution" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center" classes="mb-4">
+			<h2 class="text-pretty">
+				OptiCV checks all of this for you <strong>automatically.</strong>
+			</h2>
+			<p class="text-lg text-neutral-600 dark:text-neutral-400">
+				You don't need to become an ATS expert. Upload your CV, paste the job, and we handle the
+				rest.
+			</p>
+		</Col>
+		<Col span="2" />
+	</Row>
+	<Row>
+		<Col span="2" />
+		<Col span="8">
+			<div class="mt-8 space-y-5">
+				{
+					features.map((feature) => (
+						<div class="flex items-start gap-4 rounded-2xl border border-primary-100 bg-white p-6 shadow-sm dark:border-primary-900/30 dark:bg-neutral-800">
+							<Icon
+								name="check-circle"
+								class="mt-0.5 h-6 w-6 shrink-0 text-primary-500 dark:text-primary-400"
+							/>
+							<p class="mb-0 text-base text-neutral-700 dark:text-neutral-300">
+								<a
+									href="/features"
+									class="font-semibold text-primary-700 hover:underline dark:text-primary-400"
+								>
+									{feature.title}
+								</a>{' '}
+								{feature.description}
+							</p>
+						</div>
+					))
+				}
+			</div>
+			<p class="mt-8 text-center text-base text-neutral-500 dark:text-neutral-400">
+				Every check runs against the <strong>specific job</strong> you're applying for, not a generic
+				template, because that's exactly how the ATS reads you.
+			</p>
+		</Col>
+		<Col span="2" />
+	</Row>
+</Section>
