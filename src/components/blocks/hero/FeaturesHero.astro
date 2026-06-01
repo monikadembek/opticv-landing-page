@@ -1,0 +1,34 @@
+---
+// OptiCV Features Page Hero
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Button from '../../ui/Button.astro'
+---
+
+<Section id="intro" padding="both" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center">
+			<h1 class="text-pretty">
+				Everything your CV needs to
+				<strong class="text-primary-600">beat the bots</strong>
+				and win the human.
+			</h1>
+			<p class="pb-2 text-xl text-neutral-600 dark:text-neutral-300">
+				OptiCV turns one upload and one job ad into a complete, ATS-ready application package.
+				Here's exactly what you get.
+			</p>
+			<p class="pb-6 text-lg text-neutral-500 dark:text-neutral-400">
+				Upload your CV, paste the job description, and let AI handle the rest — in under 2 minutes.
+			</p>
+			<div class="flex flex-wrap items-center justify-center gap-4">
+				<Button size="lg" link="/" style="primary">Optimize my CV</Button>
+				<Button size="lg" link="/" style="neutral">Sign in</Button>
+			</div>
+			<p class="mt-4 text-sm text-neutral-400">Free to start · No credit card needed</p>
+		</Col>
+		<Col span="2" />
+	</Row>
+</Section>
