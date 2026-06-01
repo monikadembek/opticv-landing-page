@@ -21,13 +21,13 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
+	siteTitle: 'OptiCV — AI-Powered CV Optimization',
 	siteDescription:
-		'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+		"OptiCV rewrites your CV for the exact job you're chasing, so it passes ATS filters and lands on a real recruiter's desk. Upload your CV, paste the job ad, get results in under 2 minutes.",
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/logo.svg',
-		alt: 'Foxi. logo'
+		src: '/opticv-logo-icon.svg',
+		alt: 'OptiCV logo'
 	},
 	canonical: true,
 	noindex: false,

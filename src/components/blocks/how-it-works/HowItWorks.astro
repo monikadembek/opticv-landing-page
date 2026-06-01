@@ -1,0 +1,66 @@
+---
+// How It Works section
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import { Icon } from 'astro-icon/components'
+
+const steps = [
+	{
+		number: '1',
+		title: 'Upload your CV',
+		description:
+			"Drop in your current CV as a PDF or DOCX. We'll read it, parse it, and keep your structure intact — nothing to retype.",
+		icon: 'document-text'
+	},
+	{
+		number: '2',
+		title: 'Paste the job description',
+		description:
+			'Found a role you want? Paste the listing. The more detail, the better we can tailor your CV to match.',
+		icon: 'clipboard-document-list'
+	},
+	{
+		number: '3',
+		title: 'Get your optimized package',
+		description:
+			"In under two minutes you'll have an ATS-friendly CV, a tailored cover letter, and a personalized interview prep guide — ready to download.",
+		icon: 'check-circle'
+	}
+]
+---
+
+<Section id="how-it-works">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">
+				Three steps. Two minutes.<br />
+				<strong>One stronger CV.</strong>
+			</h2>
+			<p class="pb-0 text-lg text-neutral-600 dark:text-neutral-400">
+				No templates to wrestle with. No guessing what recruiters want.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		{
+			steps.map((step) => (
+				<Col span="4">
+					<div class="flex flex-col items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-8 text-center dark:border-neutral-700 dark:bg-neutral-800">
+						<div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/40">
+							<Icon name={step.icon} class="h-7 w-7 text-primary-600 dark:text-primary-400" />
+						</div>
+						<div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white">
+							{step.number}
+						</div>
+						<h3 class="font-headings text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+							{step.title}
+						</h3>
+						<p class="text-base text-neutral-600 dark:text-neutral-400">{step.description}</p>
+					</div>
+				</Col>
+			))
+		}
+	</Row>
+</Section>

@@ -1,0 +1,35 @@
+---
+// Stats Band — social proof numbers
+
+const stats = [
+	{
+		number: '~75%',
+		caption: 'of CVs are rejected by ATS software before a human ever reads them.'
+	},
+	{
+		number: '7 seconds',
+		caption: 'is the average time a recruiter spends scanning a CV.'
+	},
+	{
+		number: '2×',
+		caption: 'more interview invites when a CV is tailored to the specific job.'
+	}
+]
+---
+
+<div class="bg-primary-50 dark:bg-primary-950/30 py-16">
+	<div class="container mx-auto px-4">
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+			{
+				stats.map((stat) => (
+					<div class="text-center">
+						<p class="font-headings text-5xl font-bold text-primary-600 dark:text-primary-400">
+							{stat.number}
+						</p>
+						<p class="mt-3 text-base text-neutral-600 dark:text-neutral-400">{stat.caption}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>

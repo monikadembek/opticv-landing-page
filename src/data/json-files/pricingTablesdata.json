@@ -1,78 +1,61 @@
 [
 	{
 		"header": {
-			"title": "Basic",
-			"subtitle": "Ideal for individual developers.",
+			"title": "Free",
+			"subtitle": "Everything you need to get started.",
+			"currency": "$",
+			"price": "0",
+			"priceLabel": "month",
+			"priceMontly": "0",
+			"priceLabelMontly": "month",
+			"buttonName": "Get started for free",
+			"buttonLink": "/"
+		},
+		"body": {
+			"listItems": [
+				{ "listItem": "1 CV optimization per month" },
+				{ "listItem": "AI resume autopsy & keyword gap analysis" },
+				{ "listItem": "Summary rewrites & stronger bullet points" },
+				{ "listItem": "Cover letter generator" },
+				{ "listItem": "Interview prep guide" },
+				{ "listItem": "One CV template" },
+				{ "listItem": "PDF + DOCX export" }
+			]
+		},
+		"footer": {
+			"buttonName": "See all features",
+			"buttonLink": "/features"
+		},
+		"type": "basic"
+	},
+	{
+		"header": {
+			"title": "Pro",
+			"subtitle": "For serious job seekers.",
 			"currency": "$",
 			"price": "19",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "25",
+			"priceLabel": "month",
+			"priceMontly": "19",
 			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
+			"buttonName": "Go Pro",
 			"buttonLink": "/"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." }
+				{ "listItem": "Unlimited CV optimizations" },
+				{ "listItem": "AI resume autopsy & keyword gap analysis" },
+				{ "listItem": "Summary rewrites & stronger bullet points" },
+				{ "listItem": "Cover letter generator" },
+				{ "listItem": "Interview prep guide" },
+				{ "listItem": "Multiple ATS friendly CV templates" },
+				{ "listItem": "PDF + DOCX export" },
+				{ "listItem": "LinkedIn profile rewrite (coming soon)" }
 			]
 		},
 		"footer": {
 			"buttonName": "See all features",
-			"buttonLink": "/"
-		},
-		"type": "basic"
-	},
-	{
-		"header": {
-			"title": "Team",
-			"subtitle": "Ideal for small teams",
-			"currency": "$",
-			"price": "29",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "35",
-			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
-			"buttonLink": "/"
-		},
-		"body": {
-			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." },
-				{ "listItem": "Unlock endless inspiration" }
-			]
-		},
-		"footer": {
-			"buttonName": "See all features",
-			"buttonLink": "/"
+			"buttonLink": "/features"
 		},
 		"type": "featured"
-	},
-	{
-		"header": {
-			"title": "Enterprise",
-			"subtitle": "Ideal for companies",
-			"currency": "$",
-			"price": "49",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "65",
-			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
-			"buttonLink": "/"
-		},
-		"body": {
-			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." }
-			]
-		},
-		"footer": {
-			"buttonName": "See all features",
-			"buttonLink": "/"
-		},
-		"type": "basic"
 	}
 ]

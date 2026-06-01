@@ -1,29 +1,28 @@
 ---
 // Components
-// - Layout
 import Layout from '../layouts/Layout.astro'
-// - UI
 import Hero from '../components/blocks/hero/HomeCTA.astro'
-import Features from '../components/blocks/features/FeatureCards.astro'
-import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
-import CTA from '../components/blocks/CTA/BasicDark.astro'
+import StatsBand from '../components/blocks/stats/StatsBand.astro'
+import HowItWorks from '../components/blocks/how-it-works/HowItWorks.astro'
+import Features from '../components/blocks/features/OptiCVFeatures.astro'
+import Pricing from '../components/blocks/pricing/OptiCVPricing.astro'
+import FAQ from '../components/blocks/FAQ/OptiCVFaq.astro'
+import CTA from '../components/blocks/CTA/OptiCVCTA.astro'
 
-// Content
-// - Testimonial background
-import testimonialBackground from '../assets/testimonial-bg-01.webp'
-// - SEO
+// SEO
 const SEO = {
-	title: 'Foxi | Your Productivity Toolkit',
+	title: 'OptiCV — Land more interviews with an AI-tailored CV',
 	description:
-		'Foxi is a powerful productivity toolkit designed to enhance your workflow and boost your productivity. With features like analytics, security, and integrations, Foxi is the perfect solution for your business.'
+		'OptiCV rewrites your CV for the exact job you\'re chasing, so it passes ATS filters and lands on a real recruiter\'s desk. Free to start, no credit card needed.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero />
+	<StatsBand />
+	<HowItWorks />
 	<Features />
-	<Testimonial bg={testimonialBackground} bgPosition="right" />
-	<HighlightBlocks />
+	<Pricing />
+	<FAQ />
 	<CTA />
 </Layout>

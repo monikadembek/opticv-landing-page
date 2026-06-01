@@ -35,13 +35,13 @@ export interface FooterData {
 
 export const footerNavigationData: FooterData = {
 	footerAbout: {
-		title: 'Foxi.',
+		title: 'OptiCV',
 		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
+			"AI-powered CV optimization that rewrites your CV for the exact job you're chasing, so it passes ATS filters and lands on a real recruiter's desk.",
 		logo: {
-			src: '/logo.svg',
-			alt: 'The tailwind astro theme',
-			text: 'Foxi.'
+			src: '/opticv-logo-icon.svg',
+			alt: 'OptiCV logo',
+			text: 'OptiCV'
 		}
 	},
 	footerColumns: [
@@ -53,59 +53,55 @@ export const footerNavigationData: FooterData = {
 					subCategoryLink: '/features'
 				},
 				{
-					subCategory: 'FAQ',
-					subCategoryLink: '/faq'
-				},
-				{
 					subCategory: 'Pricing',
 					subCategoryLink: '/pricing'
 				},
 				{
-					subCategory: 'Changelog',
-					subCategoryLink: '/changelog'
+					subCategory: 'What is ATS',
+					subCategoryLink: '/#how-it-works'
 				},
 				{
-					subCategory: 'Terms',
-					subCategoryLink: '/terms'
+					subCategory: 'Sign in',
+					subCategoryLink: 'https://opticv-app-web.onrender.com/login'
 				}
 			]
 		},
 		{
-			category: 'About us',
+			category: 'Company',
 			subCategories: [
 				{
-					subCategory: 'About us',
+					subCategory: 'About',
 					subCategoryLink: '/'
 				},
-				{
-					subCategory: 'News',
-					subCategoryLink: '/blog'
-				},
-				{
-					subCategory: 'Careers',
-					subCategoryLink: '/blog'
-				}
-			]
-		},
-		{
-			category: 'Get in touch',
-			subCategories: [
 				{
 					subCategory: 'Contact',
 					subCategoryLink: '/contact'
 				},
 				{
-					subCategory: 'Support',
-					subCategoryLink: '/contact'
+					subCategory: 'Blog',
+					subCategoryLink: '/blog'
+				}
+			]
+		},
+		{
+			category: 'Legal',
+			subCategories: [
+				{
+					subCategory: 'Privacy Policy',
+					subCategoryLink: '/terms'
 				},
 				{
-					subCategory: 'Join us',
-					subCategoryLink: '/contact'
+					subCategory: 'Terms of Service',
+					subCategoryLink: '/terms'
+				},
+				{
+					subCategory: 'Cookie Policy',
+					subCategoryLink: '/terms'
 				}
 			]
 		}
 	],
 	subFooter: {
-		copywriteText: '© Foxi 2024.'
+		copywriteText: '© 2026 OptiCV. Made for job seekers who deserve better odds.'
 	}
 }
