@@ -46,7 +46,7 @@ const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[]
 
 <Section>
 	<Row>
-		<Col span="12" align="center" classes="flex items-center justify-center gap-4 mb-12">
+		<!-- <Col span="12" align="center" classes="flex items-center justify-center gap-4 mb-12">
 			<span id="monthlyLabel" class="font-semibold text-neutral-400 transition-colors"
 				>Bill monthly</span
 			>
@@ -55,7 +55,8 @@ const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[]
 				class="font-semibold text-neutral-400 text-primary-500 transition-colors"
 				id="annualLabel">Bill annually</span
 			>
-		</Col>
+		</Col> -->
+		<Col span="2" />
 		{
 			pricingData.map((item, key) => (
 				<Col span="4">
@@ -63,6 +64,7 @@ const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[]
 				</Col>
 			))
 		}
+		<Col span="2" />
 	</Row>
 </Section>
 <PricingChange />
