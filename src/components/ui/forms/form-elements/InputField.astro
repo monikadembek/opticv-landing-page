@@ -31,6 +31,7 @@ type Props = {
 	required?: boolean
 	disabled?: boolean
 	value?: string
+	maxlength?: number
 	classes?: string
 }
 const {
@@ -43,6 +44,7 @@ const {
 	required,
 	disabled,
 	value,
+	maxlength,
 	classes
 } = Astro.props
 ---
@@ -63,6 +65,7 @@ const {
 		required={required}
 		disabled={disabled}
 		value={value}
+		maxlength={maxlength}
 		class="input__field peer"
 	/>
 	<label

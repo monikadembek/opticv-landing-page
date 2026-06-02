@@ -25,20 +25,202 @@ const { classes } = Astro.props
 
 <Card classes={classes}>
 	<CardBody>
-		<Form>
+		<Form id="contact-form" method="get">
 			<h2 class="text-2xl">Get in Touch</h2>
+
+			<div
+				id="form-success"
+				class="hidden rounded border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800 dark:border-green-800 dark:bg-green-950/40 dark:text-green-300"
+			>
+				Your message has been sent! We'll get back to you soon.
+			</div>
+
+			<div
+				id="form-error"
+				class="hidden rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300"
+			>
+				Something went wrong. Please try again.
+			</div>
+
 			<FormField>
-				<InputField type="text" id="firstName" label="First Name" />
-				<InputField type="text" id="lastName" label="Last Name" />
+				<div class="w-full">
+					<InputField type="text" id="firstName" label="First Name" maxlength={256} />
+					<p id="firstName-error" class="mt-1 hidden px-1 text-xs text-red-500">
+						First name is required.
+					</p>
+				</div>
+				<div class="w-full">
+					<InputField type="text" id="lastName" label="Last Name (optional)" maxlength={256} />
+					<p id="lastName-error" class="mt-1 hidden px-1 text-xs text-red-500">
+						Last name must be 256 characters or fewer.
+					</p>
+				</div>
 			</FormField>
+
 			<FormField>
-				<InputField type="email" id="email" label="Email" required value="name@youremail.com" />
+				<div class="w-full">
+					<InputField type="email" id="email" label="Email" />
+					<p id="email-error" class="mt-1 hidden px-1 text-xs text-red-500">
+						Please enter a valid email address.
+					</p>
+				</div>
 			</FormField>
+
 			<FormField>
-				<InputField type="tel" id="phone" label="phone number" />
+				<InputField type="tel" id="phone" label="Phone number (optional)" />
 			</FormField>
-			<FormField><TextArea id="message" label="Your Message" /></FormField>
-			<Button style="primary" type="submit">Submit</Button>
+
+			<FormField>
+				<div class="w-full">
+					<TextArea id="message" label="Your Message" maxlength={2000} />
+					<p id="message-error" class="mt-1 hidden px-1 text-xs text-red-500">
+						Message is required.
+					</p>
+				</div>
+			</FormField>
+
+			<Button style="primary" type="submit">Send Message</Button>
 		</Form>
 	</CardBody>
 </Card>
+
+<script>
+	const form = document.querySelector<HTMLFormElement>('#contact-form')!
+	const submitBtn = form.querySelector<HTMLButtonElement>('[type="submit"]')!
+	const successMsg = document.querySelector<HTMLDivElement>('#form-success')!
+	const errorMsg = document.querySelector<HTMLDivElement>('#form-error')!
+
+	type Field = {
+		el: HTMLInputElement | HTMLTextAreaElement
+		err: HTMLElement | null
+		validate: (v: string) => string | null
+		touched: boolean
+	}
+
+	const fields: Record<string, Field> = {
+		firstName: {
+			el: document.querySelector<HTMLInputElement>('#firstName')!,
+			err: document.querySelector('#firstName-error'),
+			validate: (v) => {
+				if (v.trim().length === 0) return 'First name is required.'
+				if (v.length > 256) return 'First name must be 256 characters or fewer.'
+				return null
+			},
+			touched: false
+		},
+		lastName: {
+			el: document.querySelector<HTMLInputElement>('#lastName')!,
+			err: document.querySelector('#lastName-error'),
+			validate: (v) => {
+				if (v.length > 256) return 'Last name must be 256 characters or fewer.'
+				return null
+			},
+			touched: false
+		},
+		email: {
+			el: document.querySelector<HTMLInputElement>('#email')!,
+			err: document.querySelector('#email-error'),
+			validate: (v) => {
+				if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Please enter a valid email address.'
+				return null
+			},
+			touched: false
+		},
+		message: {
+			el: document.querySelector<HTMLTextAreaElement>('#message')!,
+			err: document.querySelector('#message-error'),
+			validate: (v) => {
+				if (v.trim().length === 0) return 'Message is required.'
+				if (v.length > 2000) return 'Message must be 2000 characters or fewer.'
+				return null
+			},
+			touched: false
+		}
+	}
+
+	function showError(field: Field, message: string) {
+		field.el.classList.add('!border-red-500', '!text-red-500')
+		if (field.err) {
+			field.err.textContent = message
+			field.err.classList.remove('hidden')
+		}
+	}
+
+	function clearError(field: Field) {
+		field.el.classList.remove('!border-red-500', '!text-red-500')
+		field.err?.classList.add('hidden')
+	}
+
+	for (const field of Object.values(fields)) {
+		field.el.addEventListener('focus', () => {
+			errorMsg.classList.add('hidden')
+		})
+		field.el.addEventListener('blur', () => {
+			field.touched = true
+			const error = field.validate(field.el.value)
+			if (error) showError(field, error)
+			else clearError(field)
+		})
+		field.el.addEventListener('input', () => {
+			if (!field.touched) return
+			const error = field.validate(field.el.value)
+			if (error) showError(field, error)
+			else clearError(field)
+		})
+	}
+
+	function validateAll(): boolean {
+		let valid = true
+		for (const field of Object.values(fields)) {
+			const error = field.validate(field.el.value)
+			if (error) { showError(field, error); valid = false }
+			else clearError(field)
+		}
+		return valid
+	}
+
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault()
+		successMsg.classList.add('hidden')
+		errorMsg.classList.add('hidden')
+
+		if (!validateAll()) {
+			errorMsg.textContent = 'Please fill in all required fields before submitting.'
+			errorMsg.classList.remove('hidden')
+			return
+		}
+
+		submitBtn.disabled = true
+		submitBtn.textContent = 'Sending…'
+
+		try {
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					firstName: document.querySelector<HTMLInputElement>('#firstName')!.value.trim(),
+					lastName: document.querySelector<HTMLInputElement>('#lastName')!.value.trim(),
+					email: document.querySelector<HTMLInputElement>('#email')!.value.trim(),
+					phone: document.querySelector<HTMLInputElement>('#phone')!.value.trim(),
+					message: document.querySelector<HTMLTextAreaElement>('#message')!.value.trim()
+				})
+			})
+
+			const data = await res.json()
+
+			if (res.ok && data.success) {
+				form.reset()
+				successMsg.classList.remove('hidden')
+			} else {
+				errorMsg.textContent = data.error || 'Something went wrong. Please try again.'
+				errorMsg.classList.remove('hidden')
+			}
+		} catch {
+			errorMsg.textContent = 'Network error. Please check your connection and try again.'
+			errorMsg.classList.remove('hidden')
+		} finally {
+			submitBtn.disabled = false
+			submitBtn.textContent = 'Send Message'
+		}
+	})
+</script>
