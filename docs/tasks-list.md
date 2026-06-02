@@ -75,22 +75,75 @@ https://foxi.netlify.app
 
 ## 8. Pricing page
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 02.06.2025  | 02.06.2026 | Feature coding
 
-- show available plans and what is included in them
+- show available plans, what is included in them and faq
 
 ---
 
 ## 9. Contact page - make the form send the email
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 02.06.2025  | 02.06.2026 | Feature coding
 
 - use the contact page from template
-- connect form with server / email 
+- add form validation
+- integrate with Resend to send email with user questions via Resend to specified email address 
+
+What was implemented:
+
+1. @astrojs/node adapter added + Astro upgraded to 6.4.2 — enables server-side API routes while keeping all other pages static.
+2. src/pages/api/contact.ts — a POST endpoint that:
+  - Validates required fields server-side (firstName, lastName, email, message)
+  - Validates email format with a regex
+  - Sends the email via Resend with your email as recipient and the user's email as reply-to
+3. BasicForm.astro rewritten with:
+  - Client-side validation: required fields + email format, errors appear on blur and clear on valid input
+  - Success/error banners shown after submit
+  - Loading state on the submit button ("Sending…" + disabled while in flight)
+  - Clears the form on success
+4. .env created with placeholder RESEND_API_KEY and your email as CONTACT_EMAIL_TO.
 
 ---
 
-## 10. Make legal pages
+## 10. Setup email account 
+
+**status** - todo
+
+- create gmail account dedicated to OptiCV
+
+---
+
+## 11. Waiting/mailing list
+
+**status** - todo
+
+- create waiting list - user can subscribe and get emails about upcoming product,
+- add input on main page instead of buttons to Sing in and Optimize my CV, and a button to subscribe to waiting list,
+- connect with n8n automation - user puts email in input, submits and automation puts that email in google sheet list and sends confirmation email or use Resend to sending email
+
+---
+
+## 12. Deploy to Netlify
+
+**status** - todo
+
+- deploy landing page to Netlify
+
+---
+
+## 13. Point opticv.net domain to netrlify url
+
+*status** - todo
+
+- point the main domain opticv.net to the netlify url where landing page has been published
+
+---
+
+## 14. Make legal pages
 
 **status** - todo
 
@@ -101,26 +154,24 @@ https://foxi.netlify.app
 
 ---
 
-## 11. Waiting/mailing list
+## 15. Social Madia
 
 **status** - todo
 
-- create waiting list - user can subscribe and get emails about upcoming product,
-- add input on main page instead of buttons to Sing in and Optimize my CV, and a button to subscribe to waiting list,
-- connect with n8n automation - user puts email in input, submits and automation puts that email in google sheet list and sends confirmation email
+- create Instagram page
+- create Facebook page
 
 ---
 
-## 12. Social Madia
+## 16. Add blog post introducing the app
 
 **status** - todo
 
-- Instagram page
-- Facebook page
+- add blog page introducing the app
 
 ---
 
-## 13. Build in public
+## 17. Build in public
 
 **status** - todo
 

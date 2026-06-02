@@ -4,20 +4,19 @@
 import Layout from '../layouts/Layout.astro'
 // - UI
 import FormHero from '../components/blocks/hero/ContactHero.astro'
-import CTA from '../components/blocks/CTA/BasicDark.astro'
 import ContactCards from '../components/blocks/contact/ContactCards.astro'
-import SocialProof from '../components/blocks/socialproof/Basic.astro'
+import CTA from '../components/blocks/CTA/OptiCVCTA.astro'
 
 // Content
 // - SEO
 const SEO = {
-	title: 'Foxi | Get in Touch with Us',
+	title: 'OptiCV | Get in Touch with Us',
 	description:
-		'Have questions or need assistance? Contact Foxi today for support, inquiries, or feedback. Our team is here to help you make the most of your Foxi experience.'
+		'Have questions or need assistance? Contact OptiCV today for support, inquiries, or feedback. Our team is here to help you make the most of your OptiCV experience.'
 }
 // - Page Header
 const header = {
-	title: 'Get Answers to Your <strong>Foxi</strong> Questions.',
+	title: 'Get Answers to Your <strong>OptiCV</strong> Questions.',
 	text: "Whether you have a question, need support, or just want to share your feedback, we're all ears. Reach out to us and we'll get back to you as soon as possible."
 }
 ---
@@ -30,6 +29,5 @@ const header = {
 		classes="bg-neutral-50 dark:bg-neutral-950/80"
 	/>
 	<ContactCards classes="dark:bg-neutral-950/80" />
-	<SocialProof classes="dark:bg-neutral-950/80" />
 	<CTA />
 </Layout>
