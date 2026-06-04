@@ -131,7 +131,29 @@ What was implemented:
 
 ---
 
-## 12. Deploy to Netlify
+## 12. Remove Foxi Theme leftover pages
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 04.06.2025  | 04.06.2026 | Feature coding
+
+- remove pages left from Foxi theme
+- replace Foxi theme faq page with OptiCV faq page
+- rewrite Foxi terms page with information related to OptiCV app
+- replace changelog page with opticv data, show lik in footer but after app is released
+
+---
+
+## 13. Add blog posts
+
+**status** - todo
+
+- add blog page introducing the app
+- add blog post about ats
+
+---
+
+## 14. Deploy to Netlify
 
 **status** - todo
 
@@ -139,7 +161,7 @@ What was implemented:
 
 ---
 
-## 13. Point opticv.net domain to netlify url
+## 15. Point opticv.net domain to netlify url
 
 **status** - todo
 
@@ -147,7 +169,7 @@ What was implemented:
 
 ---
 
-## 14. Add some images to pages
+## 16. Add some images to pages
 
 **status - todo**
 
@@ -155,7 +177,15 @@ What was implemented:
 
 ---
 
-## 15. Make legal pages
+## 17 Seo improvements
+
+**status - todo**
+
+- make changes to improve SEO
+
+---
+
+## 18. Update legal pages
 
 **status** - todo
 
@@ -166,7 +196,7 @@ What was implemented:
 
 ---
 
-## 16. Social Madia
+## 19. Social Madia
 
 **status** - todo
 
@@ -175,15 +205,7 @@ What was implemented:
 
 ---
 
-## 17. Add blog post introducing the app
-
-**status** - todo
-
-- add blog page introducing the app
-
----
-
-## 18. Build in public
+## 20. Build in public
 
 **status** - todo
 
