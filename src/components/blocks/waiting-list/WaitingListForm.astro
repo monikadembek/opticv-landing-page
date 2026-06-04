@@ -1,0 +1,127 @@
+---
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+// 	Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<Section id="waiting-list" padding="both" classes={classes}>
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center">
+			<h2 class="text-2xl font-semibold text-neutral-800 dark:text-neutral-100">
+				Be the first to know when we launch
+			</h2>
+			<p class="mb-8 mt-2 text-neutral-500 dark:text-neutral-400">
+				Join the waitlist and get early access to OptiCV.
+			</p>
+			<form id="waitlist-form" novalidate class="mx-auto flex max-w-md flex-col gap-3 sm:flex-row">
+				<div class="relative flex-1">
+					<input
+						id="waitlist-email"
+						type="email"
+						name="email"
+						placeholder="your@email.com"
+						required
+						autocomplete="email"
+						class="h-12 w-full rounded border border-neutral-200 px-4 text-neutral-700 placeholder-neutral-400 outline-none transition-all focus:border-primary-500 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:placeholder-neutral-500"
+					/>
+					<p id="waitlist-error" class="absolute -bottom-5 left-1 hidden text-xs text-red-500">
+						Please enter a valid email address.
+					</p>
+				</div>
+				<button
+					id="waitlist-submit"
+					type="submit"
+					class="btn-primary h-12 cursor-pointer rounded bg-primary-600 px-6 font-medium text-white transition-colors hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-60"
+				>
+					Join Waitlist
+				</button>
+			</form>
+			<p
+				id="waitlist-success"
+				class="text-md mt-6 hidden font-bold text-green-700 dark:text-green-700"
+			>
+				You're on the list! We'll be in touch soon.
+			</p>
+		</Col>
+		<Col span="2" />
+	</Row>
+</Section>
+
+<script>
+	const WEBHOOK_URL = 'https://piotr110-20110.wykr.es/webhook/39f8bdb2-f466-4dfa-b94c-cd3f6859ec8b'
+
+	const form = document.getElementById('waitlist-form') as HTMLFormElement
+	const emailInput = document.getElementById('waitlist-email') as HTMLInputElement
+	const errorMsg = document.getElementById('waitlist-error') as HTMLParagraphElement
+	const successMsg = document.getElementById('waitlist-success') as HTMLParagraphElement
+	const submitBtn = document.getElementById('waitlist-submit') as HTMLButtonElement
+
+	function isValidEmail(email: string): boolean {
+		return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)
+	}
+
+	function showError(message: string) {
+		errorMsg.textContent = message
+		errorMsg.classList.remove('hidden')
+		emailInput.classList.add('border-red-500', 'text-red-500')
+	}
+
+	function clearError() {
+		errorMsg.classList.add('hidden')
+		emailInput.classList.remove('border-red-500', 'text-red-500')
+	}
+
+	emailInput.addEventListener('input', () => {
+		if (emailInput.value) clearError()
+	})
+
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault()
+		clearError()
+
+		const email = emailInput.value.trim()
+
+		if (!email) {
+			showError('Email address is required.')
+			return
+		}
+
+		if (!isValidEmail(email)) {
+			showError('Please enter a valid email address.')
+			return
+		}
+
+		if (!WEBHOOK_URL) {
+			console.warn('Waitlist webhook URL is not configured.')
+			return
+		}
+
+		submitBtn.disabled = true
+		submitBtn.textContent = 'Sending...'
+
+		try {
+			const response = await fetch(WEBHOOK_URL, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email })
+			})
+
+			if (!response.ok) throw new Error(`Request failed with status ${response.status}`)
+
+			form.classList.add('hidden')
+			successMsg.classList.remove('hidden')
+		} catch (err) {
+			console.error('Waitlist submission error:', err)
+			showError('Something went wrong. Please try again.')
+			submitBtn.disabled = false
+			submitBtn.textContent = 'Join Waitlist'
+		}
+	})
+</script>

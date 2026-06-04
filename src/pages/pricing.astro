@@ -5,46 +5,28 @@ import Layout from '../layouts/Layout.astro'
 // - UI
 import Hero from '../components/blocks/hero/PageHeader.astro'
 import Price from '../components/blocks/pricing/PricingColumns.astro'
-import SocialProof from '../components/blocks/socialproof/Basic.astro'
-import FAQ from '../components/blocks/FAQ/Basic.astro'
-import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import Feature from '../components/blocks/features/FeatureList.astro'
-import CTA from '../components/blocks/CTA/BasicDark.astro'
+import ATSCTA from '../components/blocks/CTA/ATSCTA.astro'
+import OptiCVFeaturesListOnPricing from '../components/blocks/features/OptiCVFeaturesListOnPricing.astro'
+import OptiCVFaqPricing from '../components/blocks/FAQ/OptiCVFaqPricing.astro'
 
 // Content
 // - SEO
 const SEO = {
-	title: 'Foxi | Pricing made simple',
+	title: 'OptiCV - pricing plans',
 	description:
-		'Discover the perfect SaaS pricing plan for your business. From startups to enterprises, our scalable solutions offer unparalleled features and 24/7 support.'
+		'Discover the pricing plans for OptiCV. Check OptiCV for free and then upgrade to pro when you start job hunting'
 }
 // - Page Header
 const header = {
 	title: 'Choose the plan that works for <strong>your</strong> needs',
-	text: 'All plans come with a 30-day money-back guarantee.'
-}
-// - Testimonial data
-import testimonialBackground from '../assets/testimonial-bg-02.webp'
-const testimonialData = {
-	blockquote:
-		"Foxi isn't just an app—it's like having a mischievous yet brilliant sidekick for your business. It streamlines tasks and also cracks jokes to keep spirits high",
-	figcaption: 'Max Widgetson',
-	cite: ' CEO, Widgetify Ltd'
+	text: 'Check the app for free and then when you start applying for jobs upgrade to pro plan '
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
 	<Price />
-	<SocialProof />
-	<Feature />
-	<Testimonial
-		bg={testimonialBackground}
-		bgPosition="left"
-		blockquote={testimonialData.blockquote}
-		figcaption={testimonialData.figcaption}
-		cite={testimonialData.cite}
-	/>
-	<FAQ classes="bg-slate-50 dark:bg-neutral-900/40" />
-	<CTA />
+	<OptiCVFeaturesListOnPricing classes="bg-slate-50 dark:bg-neutral-900/40" />
+	<OptiCVFaqPricing classes="" />
+	<ATSCTA />
 </Layout>

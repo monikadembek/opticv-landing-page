@@ -1,0 +1,179 @@
+---
+// Features page — deep-dive rows for each feature
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import { Icon } from 'astro-icon/components'
+
+const features = [
+	{
+		icon: 'bug-ant',
+		title: 'Resume Autopsy',
+		promise: 'See exactly why an ATS might reject your CV and how to fix every issue.',
+		what: 'OptiCV runs your CV through an ATS-style review and surfaces every problem that could get you screened out, from missing sections and unparseable formatting to vague wording. Each issue is ranked by severity, so you know what to fix first.',
+		why: "Most CVs are filtered out by software before a human ever reads them. The Autopsy shows you the rejection reasons you can't see on your own.",
+		outcomes: [
+			'A ranked list of issues, most critical first',
+			'A plain-English explanation of each problem',
+			'A specific, actionable fix for every item'
+		]
+	},
+	{
+		icon: 'chart-pie',
+		title: 'Keyword Gap Analysis',
+		promise: 'Know your match score before you hit apply.',
+		what: 'OptiCV compares your CV against the job description and gives you a visual match score, then highlights the important keywords and skills the posting expects but your CV is missing.',
+		why: 'Recruiters and ATS both look for the language of the role. Closing the keyword gap is often the difference between landing in the "yes" pile and never being seen.',
+		outcomes: [
+			'A clear match score against the specific job',
+			'Missing keywords and skills highlighted',
+			'Guidance on where to weave them in naturally'
+		]
+	},
+	{
+		icon: 'document-text',
+		title: 'Summary Rewrites',
+		promise: 'A professional summary that actually sells you. You pick one of three variants.',
+		what: 'OptiCV generates three professional summaries, each built around a different angle of your experience, so you can lead with the story that fits the role best. Every version is editable inline.',
+		why: 'Your summary is the first thing a recruiter reads in those few seconds of attention. A sharp, role-aligned opener earns you the rest of the page.',
+		outcomes: [
+			'Three distinct AI-written summaries',
+			'Each crafted around a different strength or angle',
+			'Inline editing to make any version your own'
+		]
+	},
+	{
+		icon: 'bolt',
+		title: 'Stronger Bullet Points',
+		promise: 'Turn flat duties into achievements that get noticed.',
+		what: 'OptiCV rewrites your responsibility-style bullets into achievement-led statements using the STAR method, adding metrics where they make an impact, shown side-by-side with your original so you stay in control.',
+		why: '"Responsible for X" tells a recruiter nothing. Outcome-driven bullets prove you delivered results and that\'s what gets the interview.',
+		outcomes: [
+			'STAR-method, achievement-led rewrites',
+			'Before/after shown side-by-side',
+			'Metrics surfaced where they strengthen the point'
+		]
+	},
+	{
+		icon: 'cliboard-document-check',
+		title: 'Tailored Cover Letters',
+		promise: 'A cover letter written for this role, in the voice that fits you.',
+		what: 'OptiCV drafts cover letters built around the exact job, in multiple variants so you can choose the tone that feels right. Edit inline and export alongside your CV.',
+		why: 'A generic cover letter reads like a form, a tailored one shows you understood the role, without you staring at a blank page for an hour.',
+		outcomes: [
+			'Role-specific cover letter drafts',
+			'Multiple variants and voices to choose from',
+			'Inline editing and one-click export'
+		]
+	},
+	{
+		icon: 'light-bulb',
+		title: 'Interview Prep',
+		promise: "Walk in ready for the questions you'll actually be asked.",
+		what: 'OptiCV generates 10+ likely interview questions tailored to the role and your CV, each paired with pointers on how to frame a strong answer.',
+		why: "The hard part isn't getting the interview, it's not freezing in it. Practising the right questions ahead of time turns nerves into confidence.",
+		outcomes: [
+			'10+ role-specific interview questions',
+			'A pointer on how to approach each answer',
+			'Preparation grounded in your CV and the job, not generic lists'
+		]
+	},
+	{
+		icon: 'identification',
+		title: 'LinkedIn Headline & About Rewrite',
+		promise: 'Make recruiters find you and want to click.',
+		what: "OptiCV rewrites your LinkedIn headline and About section to match the roles you're targeting, optimized for the keywords recruiters search and the story they want to read.",
+		why: "Recruiters source candidates on LinkedIn every day. A sharp, keyword-aligned profile means more of them reach out to you before you've even applied.",
+		outcomes: [
+			'A recruiter-optimized headline',
+			'A rewritten, keyword-aware About section',
+			'Wording aligned to your target roles'
+		],
+		comingSoon: true
+	}
+]
+---
+
+<Section id="feature-details">
+	<Row>
+		<Col span="12" align="center" classes="mb-16 max-w-3xl mx-auto">
+			<h2 class="text-pretty">A closer look at what <strong>OptiCV does for you.</strong></h2>
+		</Col>
+	</Row>
+
+	{
+		features.map((feature, index) => {
+			const isEven = index % 2 === 0
+			return (
+				<div
+					class:list={[
+						'mb-8 rounded-3xl px-4 py-12 lg:px-8',
+						{ 'bg-neutral-50 dark:bg-neutral-800/40': !isEven }
+					]}
+				>
+					<Row>
+						<Col span={isEven ? '7' : '5'} classes="flex flex-col justify-center gap-6">
+							<div class="flex items-center gap-3">
+								<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/40">
+									<Icon
+										name={feature.icon}
+										class="h-6 w-6 text-primary-600 dark:text-primary-400"
+									/>
+								</div>
+								<div class="flex items-center gap-3">
+									<h3 class="mb-0 font-headings text-2xl font-semibold text-primary-700 dark:text-primary-400">
+										{feature.title}
+									</h3>
+									{feature.comingSoon && (
+										<span class="rounded-full bg-accent-100 px-3 py-1 text-xs font-semibold text-accent-800 dark:bg-accent-900/40 dark:text-accent-300">
+											Coming soon
+										</span>
+									)}
+								</div>
+							</div>
+
+							<p class="text-xl font-medium text-neutral-800 dark:text-neutral-200">
+								{feature.promise}
+							</p>
+
+							<div>
+								<p class="text-sm font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400">
+									What it does
+								</p>
+								<p class="mt-1 text-base text-neutral-600 dark:text-neutral-400">{feature.what}</p>
+							</div>
+
+							<div>
+								<p class="text-sm font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400">
+									Why it matters
+								</p>
+								<p class="mt-1 text-base text-neutral-600 dark:text-neutral-400">{feature.why}</p>
+							</div>
+						</Col>
+
+						<Col span={isEven ? '1' : '2'} />
+
+						<Col span={isEven ? '4' : '5'} classes="flex flex-col justify-center">
+							<div class="rounded-2xl border border-primary-100 bg-white p-8 shadow-sm dark:border-primary-900/30 dark:bg-neutral-800">
+								<p class="mb-4 text-sm font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400">
+									What you get
+								</p>
+								<ul class="space-y-3">
+									{feature.outcomes.map((outcome) => (
+										<li class="flex items-start gap-3">
+											<Icon name="check-circle" class="mt-0.5 h-5 w-5 shrink-0 text-primary-500" />
+											<span class="text-base text-neutral-700 dark:text-neutral-300">
+												{outcome}
+											</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						</Col>
+					</Row>
+				</div>
+			)
+		})
+	}
+</Section>

@@ -1,0 +1,26 @@
+[
+	{
+		"question": "What is included in the free?",
+		"reply": "Free plan gives you 1 full CV optimization per month together with cover letter and interview preparation materials.",
+		"category": "features",
+		"open": true
+	},
+	{
+		"question": "Are there any hidden fees?",
+		"reply": "No, there are no hidden fees. The price you see is the price you pay. We believe in transparent pricing with no surprises.",
+		"category": "pricing",
+		"open": false
+	},
+	{
+		"question": "What payment methods do you accept?",
+		"reply": "We accept all major credit cards, including Visa, MasterCard, American Express, and PayPal. For enterprise plans, we also offer invoicing options.",
+		"category": "pricing",
+		"open": false
+	},
+	{
+		"question": "Can I cancel my Pro subscription anytime?",
+		"reply": "Yes. Cancel in one click, keep Pro until the end of your billing period, then drop back to Free with no charge.",
+		"category": "pricing",
+		"open": false
+	}
+]

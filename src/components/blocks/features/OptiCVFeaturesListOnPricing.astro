@@ -1,0 +1,78 @@
+---
+// Feature List Section
+// ------------
+// Description: A list of features with icons and descriptions in a 3 column layout.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Feature from '../../ui/Feature.astro'
+
+// Data
+const features = [
+	{
+		icon: 'bug-ant',
+		title: 'Resume Autopsy',
+		description:
+			'See exactly why an ATS might reject your CV — and how to fix every issue, ranked by severity.'
+	},
+	{
+		icon: 'chart-pie',
+		title: 'Keyword Gap Analysis',
+		description:
+			'Get a match score against the job description, with the missing keywords highlighted before you apply.'
+	},
+	{
+		icon: 'document-text',
+		title: 'Summary Rewrites',
+		description:
+			'Pick from three AI-generated professional summaries, each crafted around a different angle of your experience.'
+	},
+	{
+		icon: 'bolt',
+		title: 'Stronger Bullet Points',
+		description:
+			'Turn flat duty descriptions into achievement-led bullets using the STAR method, with metrics where they matter.'
+	},
+	{
+		icon: 'cliboard-document-check',
+		title: 'Tailored Cover Letters',
+		description:
+			'Generate cover letter drafts written for the exact role — multiple variants so you can pick the voice that fits.'
+	},
+	{
+		icon: 'light-bulb',
+		title: 'Interview Prep',
+		description:
+			'Walk in ready. Get 10+ likely interview questions for the role, plus pointers on how to answer each one.'
+	}
+]
+
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<Section id="features" classes={classes}>
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">Whats included on <strong>all</strong> OptiCV plans</h2>
+			<p class="pb-0 text-lg">Explore the features that OptiCV provides.</p>
+		</Col>
+	</Row>
+	<Row>
+		{
+			features.slice(0, 8).map((feature) => (
+				<Col span="4">
+					<Feature title={feature.title} icon={feature.icon} align="left" classes="mb-12">
+						{feature.description}
+					</Feature>
+				</Col>
+			))
+		}
+	</Row>
+</Section>

@@ -1,0 +1,61 @@
+---
+// ATS FAQ section
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Accordion from '../../ui/Accordion.astro'
+import Card from '../../ui/cards/partials/Card.astro'
+
+const faqItems = [
+	{
+		question: 'Do all companies use an ATS?',
+		reply:
+			"Most medium and large employers do, and many smaller ones too, especially anyone hiring through an online application form. If you're applying on a company careers page or a job board, assume there's an ATS in the loop.",
+		open: true
+	},
+	{
+		question: 'Will a perfectly ATS-optimised CV guarantee an interview?',
+		reply:
+			'No, passing the ATS just means a human finally sees your CV. From there it still has to impress a person, which is why OptiCV optimises for both: machine-readable and genuinely compelling.',
+		open: false
+	},
+	{
+		question: 'Is "beating the ATS" the same as keyword stuffing?',
+		reply:
+			'No. Stuffing keywords reads badly to humans and modern systems can penalise it. OptiCV weaves the right terms in naturally, where they actually fit your experience.',
+		open: false
+	},
+	{
+		question: 'What file format is safest for an ATS?',
+		reply:
+			'A clean, text-based PDF or DOCX, not a scanned image or an unusual format. OptiCV exports both in ATS-friendly layouts.',
+		open: false
+	},
+	{
+		question: 'Does the same CV work for every job?',
+		reply:
+			"Rarely, each ATS scores you against that job's description, so tailoring per application is what moves the needle. OptiCV makes per-job tailoring take about two minutes.",
+		open: false
+	}
+]
+---
+
+<Section id="ats-faq">
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty">ATS questions, <strong>answered.</strong></h2>
+		</Col>
+		<Col span="2" />
+		<Col span="8">
+			<Card classes="divide-y divide-neutral-100 dark:divide-neutral-800">
+				{
+					faqItems.map((item) => (
+						<Accordion title={item.question} text={item.reply} open={item.open} />
+					))
+				}
+			</Card>
+		</Col>
+		<Col span="2" />
+	</Row>
+</Section>

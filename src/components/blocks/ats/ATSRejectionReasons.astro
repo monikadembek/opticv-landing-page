@@ -1,0 +1,66 @@
+---
+// ATS Rejection Reasons — why good candidates get filtered out
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import { Icon } from 'astro-icon/components'
+
+const reasons = [
+	{
+		lead: 'Fancy formatting',
+		detail: "tables, columns, text boxes, and graphics the ATS can't read cleanly."
+	},
+	{
+		lead: 'Missing keywords',
+		detail: "the skills and terms from the job description simply aren't on the page."
+	},
+	{
+		lead: 'Wrong section labels',
+		detail: 'creative headings ("What I bring") instead of standard ones ("Work Experience") the ATS expects.'
+	},
+	{
+		lead: 'Unparseable files',
+		detail: 'scanned PDFs, images of text, or unusual file types.'
+	},
+	{
+		lead: 'Generic, untailored CVs',
+		detail: 'one CV blasted to every job, matching none of them well.'
+	},
+	{
+		lead: 'Inconsistent dates and details',
+		detail: "formatting the ATS can't interpret, leaving gaps in your profile."
+	}
+]
+---
+
+<Section id="ats-rejection-reasons">
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center" classes="mb-12">
+			<h2 class="text-pretty">Why good candidates <strong>get filtered out.</strong></h2>
+		</Col>
+		<Col span="2" />
+	</Row>
+	<Row>
+		<Col span="2" />
+		<Col span="8">
+			<ul class="space-y-4">
+				{
+					reasons.map((reason) => (
+						<li class="flex items-start gap-4 rounded-xl border border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+							<Icon
+								name="x-mark"
+								class="mt-0.5 h-5 w-5 shrink-0 text-red-500 dark:text-red-400"
+							/>
+							<p class="mb-0 text-base text-neutral-700 dark:text-neutral-300">
+								<strong>{reason.lead}</strong> — {reason.detail}
+							</p>
+						</li>
+					))
+				}
+			</ul>
+		</Col>
+		<Col span="2" />
+	</Row>
+</Section>

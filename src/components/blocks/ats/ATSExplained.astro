@@ -1,0 +1,37 @@
+---
+// ATS Explained — plain-English definition section
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+---
+
+<Section id="ats-explained">
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center">
+			<h2 class="text-pretty">ATS, <strong>explained in plain English.</strong></h2>
+			<p class="mt-6 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
+				An <strong>Applicant Tracking System (ATS)</strong> is software employers use to collect, sort,
+				and filter the CVs they receive. When you apply for a job online, your CV usually goes into an
+				ATS first, not onto a recruiter's desk.
+			</p>
+			<p class="mt-4 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
+				The ATS scans your CV, pulls out your details, and ranks or filters candidates based on how
+				well they match the job. Only the CVs that clear that first pass are seen by a human.
+			</p>
+		</Col>
+		<Col span="2" />
+	</Row>
+	<Row>
+		<Col span="12">
+			<div
+				class="mx-auto mt-10 max-w-3xl rounded-2xl bg-primary-50 px-8 py-6 text-center dark:bg-primary-950/30"
+			>
+				<p class="text-xl font-semibold text-primary-700 dark:text-primary-300">
+					In short: <strong>the ATS decides whether a person ever reads your CV at all.</strong>
+				</p>
+			</div>
+		</Col>
+	</Row>
+</Section>
