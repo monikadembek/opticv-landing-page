@@ -121,7 +121,7 @@ What was implemented:
 
 | Status   | Date Start  | Date End   | Task Type
 | -------- | ----------- | ---------- | ------------
-| **In progress** | 03.06.2025  | 04.06.2026 | Feature coding/n8n automation
+| **Done** | 03.06.2025  | 04.06.2026 | Feature coding/n8n automation
 
 - create waiting list form - user can enter email address and submit and get notified when product will be launched, form submits to n8n webhook
 - put WaitingList component on homepage, below hero component,
