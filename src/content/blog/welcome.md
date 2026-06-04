@@ -1,27 +1,27 @@
 ---
-title: 'Welcome to Foxi!'
-pubDate: 2024-04-04T05:00:00Z
-description: "We're excited to introduce you to the ultimate productivity app designed to help you manage your tasks effortlessly to help you stay organized and efficient."
-author: 'Eleni K'
-image: '/blog/post-01-cover.png'
-tags: ['productivity', 'announcement']
+title: 'Welcome to OptiCV!'
+pubDate: 2026-06-04T05:00:00Z
+description: "We're excited to introduce OptiCV — the AI-powered tool that rewrites your CV for the exact job you're targeting, so it passes ATS filters and lands on a real recruiter's desk."
+author: 'Monika'
+image: '/blog/blogpost-01-cover.jpg'
+tags: ['career', 'announcement']
 ---
 
-Welcome to Foxi! We're excited to introduce you to the ultimate productivity app designed to help you manage your tasks effortlessly. Foxi combines powerful features with an intuitive interface to help you stay organized and efficient.
+Welcome to OptiCV! We're excited to introduce you to the AI-powered CV optimization tool built to help you land more interviews. OptiCV tailors your CV to match any job description in under 2 minutes, so you can spend less time editing and more time applying.
 
-![Foxi is here.](/blog/post-01.png)
+![OptiCV is here.](/blog/blogpost-01.jpg)
 
-We have rolled out new security updates to keep your data safe and secure. Learn more about our latest security enhancements and how they protect you.
+Most CVs never make it past automated screening. Applicant Tracking Systems (ATS) filter out candidates before a human ever sees their application — often because the CV isn't aligned with the specific language of the job posting. OptiCV fixes that automatically.
 
-Whether you're managing personal tasks, collaborating with a team, or tracking your projects, Foxi has you covered. Our mission is to provide you with the tools you need to succeed.
+Upload your CV, paste the job ad, and OptiCV rewrites your content to highlight the right skills, match the right keywords, and present you as the best-fit candidate for that role.
 
-> Foxi combines powerful features with an intuitive interface to help you stay organized and efficient!
+> Upload your CV, paste the job ad, get a recruiter-ready result in under 2 minutes.
 
 ### Key Features
 
-- **In-App Messaging**: Communicate directly within the app using our integrated messaging system.
-- **Project Management**: Organize and manage your projects with ease.
-- **Time Tracking**: Keep track of the time spent on tasks to improve productivity.
-- **Customizable Dashboards**: Tailor your workspace to fit your needs.
+- **AI-Powered Rewriting**: Your CV is rewritten to match the exact language and requirements of each job posting.
+- **ATS Optimization**: Keywords and formatting are tuned so your CV passes automated screening filters.
+- **Job Description Matching**: Paste any job ad and OptiCV identifies what to emphasize and what to cut.
+- **Fast Results**: Go from upload to optimized CV in under 2 minutes, with no manual editing required.
 
-Thank you for choosing Foxi. We look forward to helping you achieve your goals!
+Thank you for choosing OptiCV. We're here to help you get your CV in front of the right people.

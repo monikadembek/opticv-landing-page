@@ -6,49 +6,50 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/blocks/hero/PageHeader.astro'
 import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
 import TextImage from '../components/blocks/basic/TextImage.astro'
-import CTA from '../components/blocks/CTA/BasicDark.astro'
+import CTA from '../components/blocks/CTA/OptiCVCTA.astro'
 
 // Data
 import faqData from '../data/json-files/faqData.json'
 // - FAQ Categories
+const faqFeatures = faqData.filter((faq) => faq.category === 'features')
 const faqPricing = faqData.filter((faq) => faq.category === 'pricing')
-const faqIntegrations = faqData.filter((faq) => faq.category === 'integrations')
+const faqPrivacy = faqData.filter((faq) => faq.category === 'privacy')
 
 // Content
-import faqImage1 from '../assets/faq/faq-01.png'
+import faqImage from '../assets/faq/opticv-faq.jpg'
 // - SEO
 const SEO = {
-	title: 'Foxi | Get Your Questions Answered with a Smile',
+	title: 'OptiCV | Frequently Asked Questions',
 	description:
-		'Dive into the Foxi FAQ Funhouse to get answers to all your questions about pricing, integrations, features, and more. Discover how Foxi can make your work life more productive and enjoyable.'
+		'Find answers to common questions about OptiCV — how it works, what file formats are supported, how your data is protected, and what each pricing plan includes.'
 }
 // - Page Header
 const header = {
-	title: 'Get Answers to Your <strong>Foxi</strong> Questions.',
-	text: 'Find answers to common questions about Foxi '
+	title: 'Got Questions About <strong>OptiCV</strong>?',
+	text: 'Everything you need to know about optimizing your CV, staying ATS-ready, and landing more interviews.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
 	<FAQ
-		title="Understanding Our Pricing Plans"
-		text="Get all the details on Foxi’s pricing plans. Learn about the costs, discounts, and subscription options to find the best plan that fits your needs and budget."
-		data={faqPricing}
+		title="How OptiCV Works"
+		text="Learn how OptiCV analyzes your CV, scores it against real job descriptions, and gives you actionable feedback — no prompt engineering required."
+		data={faqFeatures}
 	/>
 	<TextImage
-		title="Why Foxi’s Pricing Plans Offer Great Value"
-		text="At Foxi, we believe in providing exceptional value at every price point. Our pricing plans are designed to cater to a variety of needs, from individuals and small teams to large enterprises. Each plan includes access to our powerful features, seamless integrations, and top-notch customer support. "
-		image={faqImage1}
-		mobileImage={faqImage1}
+		title="Your CV, Optimized for the Jobs You Actually Want"
+		text="OptiCV reads your CV and the job description together, then tells you exactly what to change. You get an ATS compatibility score, keyword gap analysis, and a tailored cover letter — all ready to export. No generic advice, no guesswork."
+		image={faqImage}
+		mobileImage={faqImage}
 		imagePosition="left"
 		offsetImage
 		classes="bg-neutral-50 dark:bg-neutral-900 lg:!py-64"
 	/>
 	<FAQ
-		title="Integrations Made Easy"
-		text="Discover how Foxi seamlessly integrates with your favorite tools and platforms. From Google Calendar to Slack, find out how to connect and enhance your productivity with powerful integrations."
-		data={faqIntegrations}
+		title="Pricing & Privacy"
+		text="Understand what's included in each plan, how cancellations work, and how OptiCV keeps your personal data safe."
+		data={[...faqPricing, ...faqPrivacy]}
 	/>
 	<CTA />
 </Layout>
