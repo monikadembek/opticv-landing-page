@@ -61,9 +61,13 @@ export const footerNavigationData: FooterData = {
 					subCategoryLink: '/#how-it-works'
 				},
 				{
-					subCategory: 'Sign in',
-					subCategoryLink: 'https://opticv-app-web.onrender.com/login'
+					subCategory: 'FAQ',
+					subCategoryLink: '/faq'
 				}
+				// {
+				// 	subCategory: 'Changelog',
+				// 	subCategoryLink: '/changelog'
+				// }
 			]
 		},
 		{
