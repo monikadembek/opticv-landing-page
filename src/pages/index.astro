@@ -2,6 +2,7 @@
 // Components
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/blocks/hero/HomeCTA.astro'
+import WaitingListForm from '../components/blocks/waiting-list/WaitingListForm.astro'
 import StatsBand from '../components/blocks/stats/StatsBand.astro'
 import HowItWorks from '../components/blocks/how-it-works/HowItWorks.astro'
 import Features from '../components/blocks/features/OptiCVFeatures.astro'
@@ -13,12 +14,13 @@ import CTA from '../components/blocks/CTA/OptiCVCTA.astro'
 const SEO = {
 	title: 'OptiCV — Land more interviews with an AI-tailored CV',
 	description:
-		'OptiCV rewrites your CV for the exact job you\'re chasing, so it passes ATS filters and lands on a real recruiter\'s desk. Free to start, no credit card needed.'
+		"OptiCV rewrites your CV for the exact job you're chasing, so it passes ATS filters and lands on a real recruiter's desk. Free to start, no credit card needed."
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero />
+	<WaitingListForm classes="bg-primary-200" />
 	<StatsBand />
 	<HowItWorks />
 	<Features />
