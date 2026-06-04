@@ -146,10 +146,13 @@ What was implemented:
 
 ## 13. Add blog posts
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 04.06.2025  | 04.06.2026 | Feature coding/blog post writing
 
+- add necesary changes to blog post page layout and blog/tags layout
 - add blog page introducing the app
-- add blog post about ats
+- add blog post about how to write cv for ats
 
 ---
 
