@@ -111,19 +111,23 @@ What was implemented:
 
 ## 10. Setup email account 
 
-**status** - todo
+**status** - done
 
-- create gmail account dedicated to OptiCV
+- create gmail account dedicated to OptiCV - opticvapp@gmail.com
 
 ---
 
 ## 11. Waiting/mailing list
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 03.06.2025  | 04.06.2026 | Feature coding/n8n automation
 
-- create waiting list - user can subscribe and get emails about upcoming product,
-- add input on main page instead of buttons to Sing in and Optimize my CV, and a button to subscribe to waiting list,
-- connect with n8n automation - user puts email in input, submits and automation puts that email in google sheet list and sends confirmation email or use Resend to sending email
+- create waiting list form - user can enter email address and submit and get notified when product will be launched, form submits to n8n webhook
+- put WaitingList component on homepage, below hero component,
+- in Hero component hide buttons to Sing In and Optimize my CV until OptiCV app is ready,
+- in top header nav hide button Optimize CV, until the app is ready to launch, 
+- create n8n automation connected with waiting list form - user puts email in input, submits to webhook and n8n automation is triggered, email is stored in google sheet list and sends notification by email when app will be ready to launch
 
 ---
 
@@ -135,15 +139,23 @@ What was implemented:
 
 ---
 
-## 13. Point opticv.net domain to netrlify url
+## 13. Point opticv.net domain to netlify url
 
-*status** - todo
+**status** - todo
 
 - point the main domain opticv.net to the netlify url where landing page has been published
 
 ---
 
-## 14. Make legal pages
+## 14. Add some images to pages
+
+**status - todo**
+
+- currently landing page has no images, add at least one image per page, necessary for SEO
+
+---
+
+## 15. Make legal pages
 
 **status** - todo
 
@@ -154,7 +166,7 @@ What was implemented:
 
 ---
 
-## 15. Social Madia
+## 16. Social Madia
 
 **status** - todo
 
@@ -163,7 +175,7 @@ What was implemented:
 
 ---
 
-## 16. Add blog post introducing the app
+## 17. Add blog post introducing the app
 
 **status** - todo
 
@@ -171,7 +183,7 @@ What was implemented:
 
 ---
 
-## 17. Build in public
+## 18. Build in public
 
 **status** - todo
 
