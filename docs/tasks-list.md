@@ -167,7 +167,17 @@ What was implemented:
 
 ---
 
-## 15. Point opticv.net domain to netlify url
+## 15. Hide Toast message
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 05.06.2025  | 05.06.2026 | Coding
+
+- for now hide the toast message
+
+---
+
+## 16. Point opticv.net domain to netlify url
 
 **status** - todo
 
@@ -175,7 +185,7 @@ What was implemented:
 
 ---
 
-## 16. Add some images to pages
+## 17. Add some images to pages
 
 **status - todo**
 
@@ -183,7 +193,7 @@ What was implemented:
 
 ---
 
-## 17 Seo improvements
+## 18 Seo improvements
 
 **status - todo**
 
@@ -191,7 +201,7 @@ What was implemented:
 
 ---
 
-## 18. Update legal pages
+## 19. Update legal pages
 
 **status** - todo
 
@@ -202,7 +212,7 @@ What was implemented:
 
 ---
 
-## 19. Social Madia
+## 20. Social Madia
 
 **status** - todo
 
@@ -211,7 +221,7 @@ What was implemented:
 
 ---
 
-## 20. Build in public
+## 21. Build in public
 
 **status** - todo
 
