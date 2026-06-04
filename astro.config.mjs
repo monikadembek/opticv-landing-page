@@ -1,11 +1,11 @@
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
-import node from "@astrojs/node";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://opti-cv.netlify.app",
-  adapter: node({ mode: "standalone" }),
+  adapter: netlify(),
   integrations: [icon(), sitemap()],
 });
