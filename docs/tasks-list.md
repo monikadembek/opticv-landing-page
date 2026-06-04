@@ -158,9 +158,12 @@ What was implemented:
 
 ## 14. Deploy to Netlify
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 05.06.2025  | 05.06.2026 | Deployment
 
 - deploy landing page to Netlify
+- use Netlify adapter instead of node adapter
 
 ---
 
