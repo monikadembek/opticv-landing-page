@@ -135,11 +135,12 @@ What was implemented:
 
 | Status   | Date Start  | Date End   | Task Type
 | -------- | ----------- | ---------- | ------------
-| **In progress** | 04.06.2025  | 04.06.2026 | Feature coding
+| **Done** | 04.06.2025  | 04.06.2026 | Feature coding
 
 - remove pages left from Foxi theme
 - replace Foxi theme faq page with OptiCV faq page
 - rewrite Foxi terms page with information related to OptiCV app
+- replace changelog page with opticv data, show lik in footer but after app is released
 
 ---
 
