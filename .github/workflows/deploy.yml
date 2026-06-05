@@ -36,3 +36,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /domains/limegreen-fox-593309.hostingersite.com/public_html/
+          protocol: ftps
+          port: 21
