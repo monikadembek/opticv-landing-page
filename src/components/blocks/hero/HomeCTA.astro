@@ -6,6 +6,8 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 import Button from '../../ui/Button.astro'
+import homepageImage from '../../../assets/homepage-image-01.jpg'
+import homepageImageMobile from '../../../assets/homepage-image-01-mobile.jpg'
 ---
 
 <Section id="intro" padding="both" classes="bg-neutral-50 dark:bg-neutral-900">
@@ -33,6 +35,16 @@ import Button from '../../ui/Button.astro'
 				<Button size="lg" link="/" style="neutral">Sign in</Button>
 			</div>
 			<p class="mt-4 text-sm text-neutral-400">Free to start · No credit card needed</p> -->
+		</Col>
+		<Col span="2" />
+	</Row>
+	<Row>
+		<Col span="2" />
+		<Col span="8">
+			<picture class="mt-16 inline-block">
+				{homepageImageMobile && <source srcset={homepageImageMobile.src} media="(max-width: 1024px)" />}
+				<img src={homepageImage.src} alt="recruitment system" />
+			</picture>
 		</Col>
 		<Col span="2" />
 	</Row>
