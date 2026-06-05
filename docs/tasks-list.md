@@ -177,23 +177,41 @@ What was implemented:
 
 ---
 
-## 16. Point opticv.net domain to netlify url
+## 16. Add some images to pages
 
-**status** - todo
-
-- point the main domain opticv.net to the netlify url where landing page has been published
-
----
-
-## 17. Add some images to pages
-
-**status - todo**
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 05.06.2025  | 05.06.2026 | Coding
 
 - currently landing page has no images, add at least one image per page, necessary for SEO
 
 ---
 
-## 18 Seo improvements
+## 17. Buy Hostinger hosting and deploy landing page there
+
+**status** - todo
+
+- deploy to hostinger 
+
+---
+
+## 18. Park domain opticv.net at hostinger account
+
+**status** - todo
+
+- point the main domain opticv.net to the hostinger url where landing page and app will be hosted
+
+---
+
+## 19. Add about page
+
+**status** - todo
+
+- add about page
+
+---
+
+## 20 Seo improvements
 
 **status - todo**
 
@@ -201,7 +219,7 @@ What was implemented:
 
 ---
 
-## 19. Update legal pages
+## 21. Update legal pages
 
 **status** - todo
 
@@ -212,7 +230,7 @@ What was implemented:
 
 ---
 
-## 20. Social Madia
+## 22. Social Madia
 
 **status** - todo
 
@@ -221,7 +239,7 @@ What was implemented:
 
 ---
 
-## 21. Build in public
+## 23. Build in public
 
 **status** - todo
 
