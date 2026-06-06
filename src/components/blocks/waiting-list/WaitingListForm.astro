@@ -60,78 +60,80 @@ const { classes } = Astro.props
 </Section>
 
 <script>
-	const WEBHOOK_URL = 'https://piotr110-20110.wykr.es/webhook/39f8bdb2-f466-4dfa-b94c-cd3f6859ec8b'
+	(() => {
+		const WEBHOOK_URL = 'https://piotr110-20110.wykr.es/webhook/39f8bdb2-f466-4dfa-b94c-cd3f6859ec8b'
 
-	const form = document.getElementById('waitlist-form') as HTMLFormElement
-	const emailInput = document.getElementById('waitlist-email') as HTMLInputElement
-	const errorMsg = document.getElementById('waitlist-error') as HTMLParagraphElement
-	const successMsg = document.getElementById('waitlist-success') as HTMLParagraphElement
-	const submitBtn = document.getElementById('waitlist-submit') as HTMLButtonElement
+		const form = document.getElementById('waitlist-form') as HTMLFormElement
+		const emailInput = document.getElementById('waitlist-email') as HTMLInputElement
+		const errorMsg = document.getElementById('waitlist-error') as HTMLParagraphElement
+		const successMsg = document.getElementById('waitlist-success') as HTMLParagraphElement
+		const submitBtn = document.getElementById('waitlist-submit') as HTMLButtonElement
 
-	if (!form || !emailInput || !errorMsg || !successMsg || !submitBtn) {
-		console.error('WaitingListForm: required DOM elements not found')
-		return
-	}
-
-	function isValidEmail(email: string): boolean {
-		return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)
-	}
-
-	function showError(message: string) {
-		errorMsg.textContent = message
-		errorMsg.classList.remove('hidden')
-		emailInput.classList.add('border-red-500', 'text-red-500')
-	}
-
-	function clearError() {
-		errorMsg.classList.add('hidden')
-		emailInput.classList.remove('border-red-500', 'text-red-500')
-	}
-
-	emailInput.addEventListener('input', () => {
-		if (emailInput.value) clearError()
-	})
-
-	form.addEventListener('submit', async (e) => {
-		e.preventDefault()
-		clearError()
-
-		const email = emailInput.value.trim()
-
-		if (!email) {
-			showError('Email address is required.')
+		if (!form || !emailInput || !errorMsg || !successMsg || !submitBtn) {
+			console.error('WaitingListForm: required DOM elements not found')
 			return
 		}
 
-		if (!isValidEmail(email)) {
-			showError('Please enter a valid email address.')
-			return
+		function isValidEmail(email: string): boolean {
+			return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)
 		}
 
-		if (!WEBHOOK_URL) {
-			console.warn('Waitlist webhook URL is not configured.')
-			return
+		function showError(message: string) {
+			errorMsg.textContent = message
+			errorMsg.classList.remove('hidden')
+			emailInput.classList.add('border-red-500', 'text-red-500')
 		}
 
-		submitBtn.disabled = true
-		submitBtn.textContent = 'Sending...'
-
-		try {
-			const response = await fetch(WEBHOOK_URL, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email })
-			})
-
-			if (!response.ok) throw new Error(`Request failed with status ${response.status}`)
-
-			form.classList.add('hidden')
-			successMsg.classList.remove('hidden')
-		} catch (err) {
-			console.error('Waitlist submission error:', err)
-			showError('Something went wrong. Please try again.')
-			submitBtn.disabled = false
-			submitBtn.textContent = 'Join Waitlist'
+		function clearError() {
+			errorMsg.classList.add('hidden')
+			emailInput.classList.remove('border-red-500', 'text-red-500')
 		}
-	})
+
+		emailInput.addEventListener('input', () => {
+			if (emailInput.value) clearError()
+		})
+
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault()
+			clearError()
+
+			const email = emailInput.value.trim()
+
+			if (!email) {
+				showError('Email address is required.')
+				return
+			}
+
+			if (!isValidEmail(email)) {
+				showError('Please enter a valid email address.')
+				return
+			}
+
+			if (!WEBHOOK_URL) {
+				console.warn('Waitlist webhook URL is not configured.')
+				return
+			}
+
+			submitBtn.disabled = true
+			submitBtn.textContent = 'Sending...'
+
+			try {
+				const response = await fetch(WEBHOOK_URL, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ email })
+				})
+
+				if (!response.ok) throw new Error(`Request failed with status ${response.status}`)
+
+				form.classList.add('hidden')
+				successMsg.classList.remove('hidden')
+			} catch (err) {
+				console.error('Waitlist submission error:', err)
+				showError('Something went wrong. Please try again.')
+				submitBtn.disabled = false
+				submitBtn.textContent = 'Join Waitlist'
+			}
+		})
+	})()
 </script>
