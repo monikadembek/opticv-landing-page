@@ -173,8 +173,10 @@ const { classes } = Astro.props
 		let valid = true
 		for (const field of Object.values(fields)) {
 			const error = field.validate(field.el.value)
-			if (error) { showError(field, error); valid = false }
-			else clearError(field)
+			if (error) {
+				showError(field, error)
+				valid = false
+			} else clearError(field)
 		}
 		return valid
 	}
@@ -193,26 +195,25 @@ const { classes } = Astro.props
 		submitBtn.disabled = true
 		submitBtn.textContent = 'Sending…'
 
+		const firstName = (fields.firstName.el as HTMLInputElement).value.trim()
+		const lastName = (fields.lastName.el as HTMLInputElement).value.trim()
+		const email = (fields.email.el as HTMLInputElement).value.trim()
+		const phone = document.querySelector<HTMLInputElement>('#phone')!.value.trim()
+		const message = (fields.message.el as HTMLTextAreaElement).value.trim()
+
 		try {
-			const res = await fetch('/api/contact', {
+			const res = await fetch('https://opti-cv.netlify.app/api/contact', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					firstName: document.querySelector<HTMLInputElement>('#firstName')!.value.trim(),
-					lastName: document.querySelector<HTMLInputElement>('#lastName')!.value.trim(),
-					email: document.querySelector<HTMLInputElement>('#email')!.value.trim(),
-					phone: document.querySelector<HTMLInputElement>('#phone')!.value.trim(),
-					message: document.querySelector<HTMLTextAreaElement>('#message')!.value.trim()
-				})
+				body: JSON.stringify({ firstName, lastName, email, phone, message })
 			})
 
-			const data = await res.json()
-
-			if (res.ok && data.success) {
+			if (res.ok) {
 				form.reset()
 				successMsg.classList.remove('hidden')
 			} else {
-				errorMsg.textContent = data.error || 'Something went wrong. Please try again.'
+				const data = await res.json()
+				errorMsg.textContent = data.message || 'Something went wrong. Please try again.'
 				errorMsg.classList.remove('hidden')
 			}
 		} catch {
