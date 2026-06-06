@@ -189,13 +189,43 @@ What was implemented:
 
 ## 17. Buy Hostinger hosting and deploy landing page there
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 05.06.2025  | 05.06.2026 | Deployment
 
-- deploy to hostinger 
+- buy hostineger business account
+- deploy landing page to hostinger - use github action for that as hostinger has very limited integration with github repos and would'n allow to specify build command and store env variables:
+  - store env variables as github secrets
+  - prepare github action - deploy.yml
 
 ---
 
-## 18. Park domain opticv.net at hostinger account
+## 18. Fix issue with waiting form not working on servers
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 06.06.2025  | 06.06.2026 | Bugfix
+
+- add early return if dom elements are not available
+- use IIFE - required by early return
+
+---
+
+## 18. Rebuild contact form to use Netlify server function to send emails from contact form and hostinger serving static page
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **In progress** | 06.06.2025  | 06.06.2026 | Refactoring
+
+- hostinger only allows static pages, it doesn't support server functions, so we need to still deploy the app to netlify to use the netlify's server function, 
+we deploy app to hostinger  which supports only static pages, and from there we will call server function on netlify account
+- Netlify auto-deploys the function (since your repo is connected there)
+- GitHub Actions deploys the static site to Hostinger
+
+---
+
+
+## 19. Park domain opticv.net at hostinger account
 
 **status** - todo
 
@@ -203,7 +233,7 @@ What was implemented:
 
 ---
 
-## 19. Add about page
+## 20. Add about page
 
 **status** - todo
 
@@ -211,7 +241,7 @@ What was implemented:
 
 ---
 
-## 20 Seo improvements
+## 21 Seo improvements
 
 **status - todo**
 
@@ -219,7 +249,7 @@ What was implemented:
 
 ---
 
-## 21. Update legal pages
+## 22. Update legal pages
 
 **status** - todo
 
@@ -230,16 +260,16 @@ What was implemented:
 
 ---
 
-## 22. Social Madia
+## 23. Social Madia
 
 **status** - todo
 
-- create Instagram page
-- create Facebook page
+- create Instagram business page
+- create Facebook business page, connect to my personal profile
 
 ---
 
-## 23. Build in public
+## 24. Build in public
 
 **status** - todo
 
