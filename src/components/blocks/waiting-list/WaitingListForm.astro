@@ -20,7 +20,12 @@ const { classes } = Astro.props
 			<p class="mb-8 mt-2 text-neutral-600 dark:text-neutral-600">
 				Join the waitlist and get early access to OptiCV.
 			</p>
-			<form id="waitlist-form" novalidate method="POST" class="mx-auto flex max-w-md flex-col gap-3 sm:flex-row">
+			<form
+				id="waitlist-form"
+				novalidate
+				method="POST"
+				class="mx-auto flex max-w-md flex-col gap-3 sm:flex-row"
+			>
 				<div class="relative flex-1">
 					<input
 						id="waitlist-email"
@@ -57,15 +62,16 @@ const { classes } = Astro.props
 <script>
 	const WEBHOOK_URL = 'https://piotr110-20110.wykr.es/webhook/39f8bdb2-f466-4dfa-b94c-cd3f6859ec8b'
 
-	const form = document.getElementById('waitlist-form') as HTMLFormElement | null
-	const emailInput = document.getElementById('waitlist-email') as HTMLInputElement | null
-	const errorMsg = document.getElementById('waitlist-error') as HTMLParagraphElement | null
-	const successMsg = document.getElementById('waitlist-success') as HTMLParagraphElement | null
-	const submitBtn = document.getElementById('waitlist-submit') as HTMLButtonElement | null
+	const form = document.getElementById('waitlist-form') as HTMLFormElement
+	const emailInput = document.getElementById('waitlist-email') as HTMLInputElement
+	const errorMsg = document.getElementById('waitlist-error') as HTMLParagraphElement
+	const successMsg = document.getElementById('waitlist-success') as HTMLParagraphElement
+	const submitBtn = document.getElementById('waitlist-submit') as HTMLButtonElement
 
 	if (!form || !emailInput || !errorMsg || !successMsg || !submitBtn) {
 		console.error('WaitingListForm: required DOM elements not found')
-	} else {
+		return
+	}
 
 	function isValidEmail(email: string): boolean {
 		return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)
@@ -128,5 +134,4 @@ const { classes } = Astro.props
 			submitBtn.textContent = 'Join Waitlist'
 		}
 	})
-	}
 </script>
