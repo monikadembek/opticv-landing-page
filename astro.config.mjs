@@ -5,7 +5,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://limegreen-fox-593309.hostingersite.com",
+  site: "https://opticv.net",
   adapter: netlify(),
   integrations: [icon(), sitemap()],
 });

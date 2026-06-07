@@ -5,7 +5,7 @@ import { randomUUID } from 'node:crypto'
 export const prerender = false
 
 const CORS_HEADERS = {
-	'Access-Control-Allow-Origin': 'https://limegreen-fox-593309.hostingersite.com',
+	'Access-Control-Allow-Origin': 'https://opticv.net',
 	'Access-Control-Allow-Methods': 'POST, OPTIONS',
 	'Access-Control-Allow-Headers': 'Content-Type'
 }
