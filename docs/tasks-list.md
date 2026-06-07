@@ -215,21 +215,23 @@ What was implemented:
 
 | Status   | Date Start  | Date End   | Task Type
 | -------- | ----------- | ---------- | ------------
-| **In progress** | 06.06.2025  | 06.06.2026 | Refactoring
+| **Done** | 06.06.2025  | 06.06.2026 | Refactoring
 
 - hostinger only allows static pages, it doesn't support server functions, so we need to still deploy the app to netlify to use the netlify's server function, 
-we deploy app to hostinger  which supports only static pages, and from there we will call server function on netlify account
-- Netlify auto-deploys the function (since your repo is connected there)
+we deploy app to hostinger which supports only static pages, and from there we will call server function on netlify account
+- Netlify auto-deploys the function (since your repo is connected there),it auto deploys whole landing page, so we have it in both places netlify and hostinger
 - GitHub Actions deploys the static site to Hostinger
 
 ---
 
-
 ## 19. Park domain opticv.net at hostinger account
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 06.06.2025  | 07.06.2026 | Infrastructure
 
 - point the main domain opticv.net to the hostinger url where landing page and app will be hosted
+- requires also changing ftp server data in github secrets bc previous were for temporary domain on hostinger, also change domain in congfig.astro and in contact api
 
 ---
 
