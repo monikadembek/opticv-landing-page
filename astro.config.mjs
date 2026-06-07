@@ -8,4 +8,9 @@ export default defineConfig({
   site: "https://opticv.net",
   adapter: netlify(),
   integrations: [icon(), sitemap()],
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/noop",
+    },
+  },
 });
