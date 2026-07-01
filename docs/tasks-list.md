@@ -235,7 +235,36 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
-## 20. Add about page
+## 20. Add information about the linkedin profile boost feature
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 01.07.2025  | 01.07.2026 | Content changes
+
+- add card with information about the linkedin profile boost feature on home page,
+- update pricing tables (home page and pricing page) with linkedin feature - remove the coming soon info,
+- on features page update information regarding the linkedin feature,
+
+---
+
+## 21. Add images/screenshots from app
+
+**status: todo**
+**time:**
+
+- add images - screenshots from the app with available features
+
+---
+
+## 22. Add blog post about the linkedin profile boost feature
+
+- add blog post about how important it is to have optimized linkedin page,
+include information about linkedin feature
+- include keywords to enhance seo
+
+---
+
+## 23. Add about page
 
 **status** - todo
 
@@ -243,7 +272,7 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
-## 21 Seo improvements
+## 24 Seo improvements
 
 **status - todo**
 
@@ -251,7 +280,7 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
-## 22. Update legal pages
+## 24. Update legal pages
 
 **status** - todo
 
@@ -262,7 +291,7 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
-## 23. Social Madia
+## 25. Social Madia
 
 **status** - todo
 
@@ -271,7 +300,7 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
-## 24. Build in public
+## 26. Build in public
 
 **status** - todo
 
