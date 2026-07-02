@@ -71,6 +71,6 @@ Quantify your achievements wherever possible. "Increased sales by 32% in Q3" is 
 
 ## Let OptiCV Do the Heavy Lifting
 
-Manually tailoring your CV for every application is time-consuming and easy to get wrong. OptiCV automates the process — upload your CV, paste the job description, and receive an ATS-optimized version in under 2 minutes.
+Manually tailoring your CV for every application is time-consuming and easy to get wrong. OptiCV automates the process — upload your CV, paste the job description, and receive an ATS-optimized version in under 5 minutes.
 
 The AI rewrites your content to match the exact language of each posting, so you consistently pass ATS filters without spending hours on each application.
