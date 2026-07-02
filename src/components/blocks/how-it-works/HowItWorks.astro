@@ -5,28 +5,34 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 import { Icon } from 'astro-icon/components'
+import step1Upload from '../../../assets/how-it-works/step-1-upload.png'
+import step2JobDescription from '../../../assets/how-it-works/step-2-job-description.png'
+import step3Optimization from '../../../assets/how-it-works/step-3-optimization.png'
 
 const steps = [
 	{
 		number: '1',
 		title: 'Upload your CV',
 		description:
-			"Drop in your current CV as a PDF or DOCX. We'll read it, parse it, and keep your structure intact — nothing to retype.",
-		icon: 'document-text'
+			"Drop in your current CV as a PDF or DOCX. We'll read it, parse it, and keep your structure intact, nothing to retype.",
+		imageSrc: step1Upload.src,
+		altTitle: 'Screenshot of app cv upload page'
 	},
 	{
 		number: '2',
 		title: 'Paste the job description',
 		description:
-			'Found a role you want? Paste the listing. The more detail, the better we can tailor your CV to match.',
-		icon: 'clipboard-document-list'
+			'Found a role you want? Paste the listing, the more detail you give, the better we can tailor your CV to match.',
+		imageSrc: step2JobDescription.src,
+		altTitle: 'Screenshot of job description form on cv optimization page in the app'
 	},
 	{
 		number: '3',
 		title: 'Get your optimized package',
 		description:
-			"In under two minutes you'll have an ATS-friendly CV, a tailored cover letter, and a personalized interview prep guide — ready to download.",
-		icon: 'check-circle'
+			"In under 5 minutes you'll have an ATS-friendly CV, a tailored cover letter, a personalized interview prep guide and information you can put on your Linkedin profile page, all ready to download.",
+		imageSrc: step3Optimization.src,
+		altTitle: 'Screenshot of cv optimization page in the app'
 	}
 ]
 ---
@@ -35,7 +41,7 @@ const steps = [
 	<Row>
 		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto">
 			<h2 class="text-pretty">
-				Three steps. Two minutes.<br />
+				Three steps. Five minutes.<br />
 				<strong>One stronger CV.</strong>
 			</h2>
 			<p class="pb-0 text-lg text-neutral-600 dark:text-neutral-400">
@@ -48,15 +54,13 @@ const steps = [
 			steps.map((step) => (
 				<Col span="4">
 					<div class="flex flex-col items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-8 text-center dark:border-neutral-700 dark:bg-neutral-800">
-						<div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/40">
-							<Icon name={step.icon} class="h-7 w-7 text-primary-600 dark:text-primary-400" />
-						</div>
 						<div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white">
 							{step.number}
 						</div>
-						<h3 class="font-headings text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+						<h3 class="mb-0 font-headings text-xl font-semibold text-neutral-900 dark:text-neutral-100">
 							{step.title}
 						</h3>
+						<img src={step.imageSrc} alt={step.altTitle} />
 						<p class="text-base text-neutral-600 dark:text-neutral-400">{step.description}</p>
 					</div>
 				</Col>

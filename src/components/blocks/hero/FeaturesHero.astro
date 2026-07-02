@@ -5,8 +5,8 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 import Button from '../../ui/Button.astro'
-import featuresImage from '../../../assets/features-image-01.jpg'
-import featuresImageMobile from '../../../assets/features-image-01-mobile.jpg'
+import featuresImage from '../../../assets/features/optimization-page.png'
+import featuresImageMobile from '../../../assets/features/optimization-page.png'
 ---
 
 <Section id="intro" padding="both" classes="bg-neutral-50 dark:bg-neutral-900">
@@ -43,7 +43,11 @@ import featuresImageMobile from '../../../assets/features-image-01-mobile.jpg'
 		<Col span="2" />
 		<Col span="8">
 			<picture class="mt-16 inline-block">
-				{featuresImageMobile && <source srcset={featuresImageMobile.src} media="(max-width: 1024px)" />}
+				{
+					featuresImageMobile && (
+						<source srcset={featuresImageMobile.src} media="(max-width: 1024px)" />
+					)
+				}
 				<img src={featuresImage.src} alt="recruitment system" />
 			</picture>
 		</Col>
