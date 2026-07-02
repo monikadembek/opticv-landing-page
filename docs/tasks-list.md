@@ -249,10 +249,12 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ## 21. Add images/screenshots from app
 
-**status: todo**
-**time:**
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 02.07.2025  | 02.07.2026 | Content changes
 
-- add images - screenshots from the app with available features
+- Homepage - how it works section - add screenshots from app
+- Features - replace main image with screenshot fro the app
 
 ---
 

@@ -23,7 +23,7 @@ export interface Config {
 export const configData: Config = {
 	siteTitle: 'OptiCV — AI-Powered CV Optimization',
 	siteDescription:
-		"OptiCV rewrites your CV for the exact job you're chasing, so it passes ATS filters and lands on a real recruiter's desk. Upload your CV, paste the job ad, get results in under 2 minutes.",
+		"OptiCV rewrites your CV for the exact job you're chasing, so it passes ATS filters and lands on a real recruiter's desk. Upload your CV, paste the job ad, get results in under 5 minutes.",
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/opticv-logo-icon.svg',
