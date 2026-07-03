@@ -258,7 +258,17 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
-## 22. Add blog post about the linkedin profile boost feature
+## 22. Sentry integration to monitor errors on the page
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 03.07.2025  | 03.07.2026 | Infrastracture/monitoring
+
+- add sentry to astro app to monitor errors
+
+---
+
+## 23. Add blog post about the linkedin profile boost feature
 
 - add blog post about how important it is to have optimized linkedin page,
 include information about linkedin feature
@@ -266,7 +276,7 @@ include information about linkedin feature
 
 ---
 
-## 23. Add about page
+## 24. Add about page
 
 **status** - todo
 
@@ -274,7 +284,7 @@ include information about linkedin feature
 
 ---
 
-## 24 Seo improvements
+## 25 Seo improvements
 
 **status - todo**
 
@@ -282,7 +292,7 @@ include information about linkedin feature
 
 ---
 
-## 24. Update legal pages
+## 26. Update legal pages
 
 **status** - todo
 
@@ -293,7 +303,7 @@ include information about linkedin feature
 
 ---
 
-## 25. Social Madia
+## 27. Social Madia
 
 **status** - todo
 
@@ -302,7 +312,7 @@ include information about linkedin feature
 
 ---
 
-## 26. Build in public
+## 28. Build in public
 
 **status** - todo
 
