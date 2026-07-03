@@ -17,6 +17,7 @@
     "@fontsource-variable/outfit": "^5.0.13",
     "@fontsource/lato": "^5.2.7",
     "@fontsource/montserrat": "^5.2.8",
+    "@sentry/astro": "^10.63.0",
     "astro": "^6.4.2",
     "astro-icon": "^1.1.0",
     "prettier": "^3.3.2",
