@@ -5,15 +5,16 @@
 			"subtitle": "Everything you need to get started.",
 			"currency": "$",
 			"price": "0",
-			"priceLabel": "month",
+			"priceLabel": "monthly",
 			"priceMontly": "0",
-			"priceLabelMontly": "month",
+			"priceLabelMontly": "",
 			"buttonName": "Get started for free",
 			"buttonLink": "/"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "1 CV optimization per month" },
+				{ "listItem": "1 CV upload limit" },
+				{ "listItem": "1 CV optimization of the uploaded CV" },
 				{ "listItem": "AI resume autopsy & keyword gap analysis" },
 				{ "listItem": "Summary rewrites & stronger bullet points" },
 				{ "listItem": "Cover letter generator" },
@@ -30,19 +31,20 @@
 	},
 	{
 		"header": {
-			"title": "Pro",
-			"subtitle": "For serious job seekers.",
+			"title": "Basic",
+			"subtitle": "For regular job seekers.",
 			"currency": "$",
-			"price": "19",
-			"priceLabel": "month",
-			"priceMontly": "19",
+			"price": "9.90",
+			"priceLabel": "monthly",
+			"priceMontly": "9.90",
 			"priceLabelMontly": "month",
-			"buttonName": "Go Pro",
+			"buttonName": "Get Basic Package",
 			"buttonLink": "/"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Unlimited CV optimizations" },
+				{ "listItem": "5 CV upload limit" },
+				{ "listItem": "10 CV optimizations of the uploaded CVs" },
 				{ "listItem": "AI resume autopsy & keyword gap analysis" },
 				{ "listItem": "Summary rewrites & stronger bullet points" },
 				{ "listItem": "Cover letter generator" },
@@ -57,5 +59,36 @@
 			"buttonLink": "/features"
 		},
 		"type": "featured"
+	},
+	{
+		"header": {
+			"title": "Pro",
+			"subtitle": "For serious job seekers.",
+			"currency": "$",
+			"price": "19.90",
+			"priceLabel": "monthly",
+			"priceMontly": "19.90",
+			"priceLabelMontly": "month",
+			"buttonName": "Get Pro Package",
+			"buttonLink": "/"
+		},
+		"body": {
+			"listItems": [
+				{ "listItem": "10 CV upload limit" },
+				{ "listItem": "30 CV optimizations of the uploaded CVs" },
+				{ "listItem": "AI resume autopsy & keyword gap analysis" },
+				{ "listItem": "Summary rewrites & stronger bullet points" },
+				{ "listItem": "Cover letter generator" },
+				{ "listItem": "Interview prep guide" },
+				{ "listItem": "LinkedIn profile content" },
+				{ "listItem": "Multiple ATS friendly CV templates" },
+				{ "listItem": "PDF + DOCX export" }
+			]
+		},
+		"footer": {
+			"buttonName": "See all features",
+			"buttonLink": "/features"
+		},
+		"type": "basic"
 	}
 ]

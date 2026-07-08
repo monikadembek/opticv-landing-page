@@ -299,16 +299,16 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
-## 26. Change pricing - replace monthly subscription with price for fixed number of optimizations
+## 26. Change pricing - add limited number of CV optimizations to monthly subscriptions 
 
 | Status   | Date Start  | Date End   | Task Type
 | -------- | ----------- | ---------- | ------------
-| **in progress** | 08.07.2025  | 08.07.2026 | Content
+| **done** | 08.07.2025  | 08.07.2026 | Content
 
-- replace monthly subscription with price for fixed number of optimizations
-- add 2 variants:
-  - $9.99 - 10 CV optimizations allowed
-  - $19.99 - 30 CV optimizations allowed
+- add limits to monthly subscriptions - fixed number of cv optimizations per month
+- add 2 paid plans:
+  - $9.99 - 5 CV upload allowed, 10 CV optimizations allowed
+  - $19.99 - 10 CV upload allowed, 30 CV optimizations allowed
 
 ---
 

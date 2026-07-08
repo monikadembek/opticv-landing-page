@@ -39,20 +39,18 @@ const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[]
 			<h2 class="text-pretty">
 				Start free. <strong>Upgrade when you're job hunting hard.</strong>
 			</h2>
-			<p class="pb-0 text-lg text-neutral-600 dark:text-neutral-400">
-				Cancel anytime. No catches.
-			</p>
+			<p class="pb-0 text-lg text-neutral-600 dark:text-neutral-400">Cancel anytime. No catches.</p>
 		</Col>
 	</Row>
 	<Row>
-		<Col span="2" />
+		<Col span="1" />
 		{
 			pricingData.map((item, key) => (
-				<Col span="4">
+				<Col span="3">
 					<PricingTable data={item} listType="checklist" id={`plan-${key}`} />
 				</Col>
 			))
 		}
-		<Col span="2" />
+		<Col span="1" />
 	</Row>
 </Section>
