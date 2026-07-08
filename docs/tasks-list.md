@@ -268,7 +268,27 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
-## 23. Add blog post about the linkedin profile boost feature
+## 23. Add google search console file to pblic_html folder on hostinger
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **Done** | 08.07.2025  | 08.07.2026 | Marketing
+
+---
+
+## 24. Social Media Accounts
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 07.07.2025  | 08.07.2026 | Marketing
+
+- create Facebook business page, under my personal profile
+- create Instagram business page
+- add in the footer icons with links to FB and IG
+
+---
+
+## Add blog post about the linkedin profile boost feature
 
 - add blog post about how important it is to have optimized linkedin page,
 include information about linkedin feature
@@ -276,7 +296,7 @@ include information about linkedin feature
 
 ---
 
-## 24. Add about page
+## Add about page
 
 **status** - todo
 
@@ -284,7 +304,7 @@ include information about linkedin feature
 
 ---
 
-## 25 Seo improvements
+## Seo improvements
 
 **status - todo**
 
@@ -292,7 +312,7 @@ include information about linkedin feature
 
 ---
 
-## 26. Update legal pages
+## Update legal pages
 
 **status** - todo
 
@@ -303,16 +323,7 @@ include information about linkedin feature
 
 ---
 
-## 27. Social Madia
-
-**status** - todo
-
-- create Instagram business page
-- create Facebook business page, connect to my personal profile
-
----
-
-## 28. Build in public
+## Build in public
 
 **status** - todo
 
