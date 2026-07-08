@@ -288,6 +288,30 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
+## 25. Google analytics
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 08.07.2025  | 08.07.2026 | Marketing
+
+- add Google Analytics Measurement ID for Google Analytics
+- add the env variable on github as a secret and use it in the github actions deploy so it is used only on the hostinger's deployed page and not on the Netlify deployed page
+
+---
+
+## 26. Change pricing - replace monthly subscription with price for fixed number of optimizations
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **in progress** | 08.07.2025  | 08.07.2026 | Content
+
+- replace monthly subscription with price for fixed number of optimizations
+- add 2 variants:
+  - $9.99 - 10 CV optimizations allowed
+  - $19.99 - 30 CV optimizations allowed
+
+---
+
 ## Add blog post about the linkedin profile boost feature
 
 - add blog post about how important it is to have optimized linkedin page,
