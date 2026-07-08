@@ -56,15 +56,15 @@ const pricingData: PricingTableData[] = pricingTablesData as PricingTableData[]
 				id="annualLabel">Bill annually</span
 			>
 		</Col> -->
-		<Col span="2" />
+		<Col span="1" />
 		{
 			pricingData.map((item, key) => (
-				<Col span="4">
+				<Col span="3">
 					<PricingTable data={item} listType="checklist" id={`plan-${key}`} />
 				</Col>
 			))
 		}
-		<Col span="2" />
+		<Col span="1" />
 	</Row>
 </Section>
 <PricingChange />
