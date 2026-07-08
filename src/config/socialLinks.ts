@@ -11,8 +11,13 @@ export interface SocialLink {
 export const socialLinks: SocialLink[] = [
 	{
 		name: 'facebook',
-		link: '/',
+		link: 'https://www.facebook.com/profile.php?id=61591526651342',
 		icon: 'fb-icon'
+	},
+	{
+		name: 'instagram',
+		link: 'https://www.instagram.com/opticv_app/',
+		icon: 'ig-icon'
 	}
 	// {
 	// 	name: 'twitter',
