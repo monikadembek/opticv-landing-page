@@ -312,6 +312,16 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ---
 
+## 27. Add link to SEO4U in the footer 
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 29.07.2025  | 29.07.2026 | Content
+
+- add link in the footer to https://seo4u.net
+
+---
+
 ## Add blog post about the linkedin profile boost feature
 
 - add blog post about how important it is to have optimized linkedin page,
