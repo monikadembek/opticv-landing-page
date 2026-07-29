@@ -1,5 +1,5 @@
 ---
-// ATS Rejection Reasons — why good candidates get filtered out
+// ATS Rejection Reasons - why good candidates get filtered out
 
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
@@ -17,7 +17,8 @@ const reasons = [
 	},
 	{
 		lead: 'Wrong section labels',
-		detail: 'creative headings ("What I bring") instead of standard ones ("Work Experience") the ATS expects.'
+		detail:
+			'creative headings ("What I bring") instead of standard ones ("Work Experience") the ATS expects.'
 	},
 	{
 		lead: 'Unparseable files',
@@ -49,12 +50,9 @@ const reasons = [
 				{
 					reasons.map((reason) => (
 						<li class="flex items-start gap-4 rounded-xl border border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-neutral-700 dark:bg-neutral-800/50">
-							<Icon
-								name="x-mark"
-								class="mt-0.5 h-5 w-5 shrink-0 text-red-500 dark:text-red-400"
-							/>
+							<Icon name="x-mark" class="mt-0.5 h-5 w-5 shrink-0 text-red-500 dark:text-red-400" />
 							<p class="mb-0 text-base text-neutral-700 dark:text-neutral-300">
-								<strong>{reason.lead}</strong> — {reason.detail}
+								<strong>{reason.lead}</strong> - {reason.detail}
 							</p>
 						</li>
 					))

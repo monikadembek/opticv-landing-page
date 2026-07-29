@@ -1,7 +1,7 @@
 ---
 title: 'Welcome to OptiCV!'
 pubDate: 2026-06-04T05:00:00Z
-description: "We're excited to introduce OptiCV — the AI-powered tool that rewrites your CV for the exact job you're targeting, so it passes ATS filters and lands on a real recruiter's desk."
+description: "We're excited to introduce OptiCV - the AI-powered tool that rewrites your CV for the exact job you're targeting, so it passes ATS filters and lands on a real recruiter's desk."
 author: 'Monika'
 image: '/blog/blogpost-01-cover.jpg'
 tags: ['career', 'announcement']
@@ -11,7 +11,7 @@ Welcome to OptiCV! We're excited to introduce you to the AI-powered CV optimizat
 
 ![OptiCV is here.](/blog/blogpost-01.jpg)
 
-Most CVs never make it past automated screening. Applicant Tracking Systems (ATS) filter out candidates before a human ever sees their application — often because the CV isn't aligned with the specific language of the job posting. OptiCV fixes that automatically.
+Most CVs never make it past automated screening. Applicant Tracking Systems (ATS) filter out candidates before a human ever sees their application - often because the CV isn't aligned with the specific language of the job posting. OptiCV fixes that automatically.
 
 Upload your CV, paste the job ad, and OptiCV rewrites your content to highlight the right skills, match the right keywords, and present you as the best-fit candidate for that role.
 

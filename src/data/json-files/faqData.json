@@ -1,7 +1,7 @@
 [
 	{
 		"question": "Is my CV data private?",
-		"reply": "Yes. Your CV stays tied to your account — we don't share it, sell it, or train public AI models on it. You can delete your CVs and account whenever you want.",
+		"reply": "Yes. Your CV stays tied to your account - we don't share it, sell it, or train public AI models on it. You can delete your CVs and account whenever you want.",
 		"category": "privacy",
 		"open": true
 	},
@@ -13,13 +13,13 @@
 	},
 	{
 		"question": "How is OptiCV different from just using ChatGPT?",
-		"reply": "ChatGPT gives you generic advice. OptiCV reads your actual CV, scores it against a specific job, flags ATS issues, and gives you ready-to-export documents — all in one place, no prompt engineering required.",
+		"reply": "ChatGPT gives you generic advice. OptiCV reads your actual CV, scores it against a specific job, flags ATS issues, and gives you ready-to-export documents - all in one place, no prompt engineering required.",
 		"category": "features",
 		"open": false
 	},
 	{
 		"question": "Do I need to install anything?",
-		"reply": "No. OptiCV runs entirely in your browser. Sign in with your email — we'll send you a 6-digit code, no password to remember.",
+		"reply": "No. OptiCV runs entirely in your browser. Sign in with your email - we'll send you a 6-digit code, no password to remember.",
 		"category": "features",
 		"open": false
 	},
@@ -30,7 +30,7 @@
 		"open": false
 	},
 	{
-		"question": "What's an ATS — and why should I care?",
+		"question": "What's an ATS - and why should I care?",
 		"reply": "An Applicant Tracking System is the software employers use to filter CVs before a human sees them. If your CV isn't formatted and worded the way an ATS expects, you can be rejected before anyone reads a word. OptiCV checks for those issues automatically.",
 		"category": "features",
 		"open": false
