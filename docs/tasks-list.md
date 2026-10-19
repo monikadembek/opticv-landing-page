@@ -471,7 +471,18 @@ Before you deploy
 
 ---
 
-## 31. Update 3 step optimization process in the main page
+## 31. Bug Go to App button in header is not navigating to OptiCV app
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 19.10.2026  | 19.10.2026 | Bugfix
+
+Button Go to App in op header opens a popup instead of navigating to https://app.opticv.net. This must be fixed.
+Button Optimize my CV in the CTA section opens app in the current app but is should open app in the new tab.
+
+---
+
+## 32. Update 3 step optimization process in the main page
 
 **status** - todo
 
