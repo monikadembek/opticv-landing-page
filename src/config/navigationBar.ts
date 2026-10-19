@@ -47,6 +47,6 @@ export const navigationBarData: NavData = {
 	],
 	navActions: [
 		// { name: 'Sign in', link: '/', style: 'neutral', size: 'lg' },
-		{ name: 'Optimize CV', link: '/', style: 'primary', size: 'lg' }
+		{ name: 'Go to App', link: 'https://app.opticv.net', style: 'primary', size: 'lg' }
 	]
 }

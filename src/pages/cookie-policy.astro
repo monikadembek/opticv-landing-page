@@ -1,0 +1,127 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import LegalDocument from '../components/blocks/basic/LegalDocument.astro'
+import CookieSettingsButton from '../components/ui/CookieSettingsButton.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'OptiCV | Cookie Policy',
+	description:
+		'Which cookies and similar technologies OptiCV uses, what they do, how long they last and how you can control them.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<LegalDocument title="Cookie Policy" lastUpdated="19 October 2026">
+		<p>
+			This Cookie Policy explains how OptiCV (“OptiCV”, “we”, “us”) uses cookies and similar
+			technologies in the OptiCV web application at app.opticv.net and on the website at opticv.net
+			(together, the “Service”). It is part of our <a href="/privacy-policy">Privacy Policy</a>, which
+			explains how we handle your personal data.
+		</p>
+
+		<h2 id="what-we-use">1. Cookies and similar technologies we use</h2>
+		<p>
+			We use cookies and similar technologies (such as your browser's local storage) to run the
+			Service and to understand how it is used.
+		</p>
+		<div class="table-wrapper">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Category</th>
+						<th scope="col">Provider</th>
+						<th scope="col">Purpose</th>
+						<th scope="col">Duration</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Strictly necessary</td>
+						<td>OptiCV / Supabase</td>
+						<td>
+							Keeps you signed in (session token in local storage), and remembers whether you've seen
+							the welcome guide
+						</td>
+						<td>Until you sign out or clear your browser data</td>
+					</tr>
+					<tr>
+						<td>Strictly necessary</td>
+						<td>Stripe</td>
+						<td>Payment processing and fraud prevention on the Stripe Checkout and billing pages</td>
+						<td>Set by Stripe, see its cookie policy</td>
+					</tr>
+					<tr>
+						<td>Analytics</td>
+						<td>PostHog</td>
+						<td>
+							Recognizes your browser between visits and measures how the Service is used (page
+							views, clicks)
+						</td>
+						<td>Up to 1 year</td>
+					</tr>
+					<tr>
+						<td>Analytics</td>
+						<td>Google (Google Analytics)</td>
+						<td>
+							On our website (opticv.net), the <code>_ga</code> and <code>_ga_*</code> cookies
+							distinguish visitors and measure how the website is used (page views, visits, how you
+							found us)
+						</td>
+						<td>Up to 2 years</td>
+					</tr>
+					<tr>
+						<td>Error monitoring</td>
+						<td>Sentry</td>
+						<td>
+							Records errors and, for some sessions, a masked replay of the page, so we can fix
+							problems
+						</td>
+						<td>For the duration of the session</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="your-choices">2. Your choices</h2>
+		<p>
+			Strictly necessary technologies don't need your consent, because the Service can't work
+			without them. We use analytics cookies only with your consent where the law requires it, and
+			you can change your choice at any time. You can also block or delete cookies in your browser
+			settings, but blocking strictly necessary storage will sign you out and stop parts of the
+			Service from working.
+		</p>
+		<p>
+			To stop Google Analytics on all websites, you can install the
+			<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener"
+				>Google Analytics opt-out browser add-on</a
+			>. You can read how Google uses data from websites that use its services at
+			<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener"
+				>policies.google.com</a
+			>.
+		</p>
+		<p><CookieSettingsButton classes="link-button" /></p>
+
+		<h2 id="changes">3. Changes to this policy</h2>
+		<p>
+			We may update this policy, for example when we add a new feature or provider. We will change
+			the “Last updated” date above. If the change is significant, we will also tell you by email or
+			in the app before it takes effect.
+		</p>
+
+		<h2 id="contact">4. Contact</h2>
+		<p>
+			For questions about this policy, email
+			<a href="mailto:opticvapp@gmail.com">opticvapp@gmail.com</a>, or write to Monika Dembek, ul.
+			Lenartowicza 22/4, 85-133 Bydgoszcz, Poland.
+		</p>
+		<p>
+			See also our <a href="/privacy-policy">Privacy Policy</a> and
+			<a href="/terms-of-use">Terms of Use</a>.
+		</p>
+	</LegalDocument>
+</Layout>

@@ -10,6 +10,7 @@
 // - Style: the style of the button (primary, secondary, neutral)
 // - Variation: the variation of the button (defaultoutline, link)
 // - Elevated: whether the button is elevated or not (optional)
+// - Id: the id of the button (optional)
 // - classes: additional classes
 // Reference: https://wind-ui.com/components/buttons/
 
@@ -22,6 +23,7 @@ type Props = {
 	style?: 'primary' | 'secondary' | 'neutral' | 'white'
 	variation?: 'outline' | 'link'
 	elevated?: boolean
+	id?: string
 	classes?: string
 }
 const {
@@ -32,6 +34,7 @@ const {
 	style = 'primary',
 	variation,
 	elevated,
+	id,
 	classes
 } = Astro.props
 ---
@@ -39,6 +42,7 @@ const {
 {
 	type === 'link' || link ? (
 		<a
+			{...(id ? { id } : {})}
 			href={link}
 			target={link?.startsWith('http') ? '_blank' : '_self'}
 			class:list={[
@@ -54,6 +58,7 @@ const {
 		</a>
 	) : (
 		<button
+			{...(id ? { id } : {})}
 			type={type}
 			class:list={[
 				'button',

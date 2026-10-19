@@ -15,7 +15,9 @@ export interface FooterAbout {
 
 export interface SubCategory {
 	subCategory: string
-	subCategoryLink: string
+	subCategoryLink?: string
+	// Renders a button that reopens the cookie banner instead of a link
+	opensCookieSettings?: boolean
 }
 
 export interface FooterColumn {
@@ -92,15 +94,19 @@ export const footerNavigationData: FooterData = {
 			subCategories: [
 				{
 					subCategory: 'Privacy Policy',
-					subCategoryLink: '/terms'
+					subCategoryLink: '/privacy-policy'
 				},
 				{
-					subCategory: 'Terms of Service',
-					subCategoryLink: '/terms'
+					subCategory: 'Terms of Use',
+					subCategoryLink: '/terms-of-use'
 				},
 				{
 					subCategory: 'Cookie Policy',
-					subCategoryLink: '/terms'
+					subCategoryLink: '/cookie-policy'
+				},
+				{
+					subCategory: 'Cookie settings',
+					opensCookieSettings: true
 				}
 			]
 		}
