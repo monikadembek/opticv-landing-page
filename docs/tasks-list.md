@@ -370,7 +370,7 @@ To get Google to drop it from search faster, use Removals → New request in Sea
 
 ---
 
-## 29. Implement cookie banner
+## 30. Implement cookie banner
 
 | Status   | Date Start  | Date End   | Task Type
 | -------- | ----------- | ---------- | ------------
@@ -471,7 +471,7 @@ Before you deploy
 
 ---
 
-## 30. Update 3 step optimization process in the main page
+## 31. Update 3 step optimization process in the main page
 
 **status** - todo
 
