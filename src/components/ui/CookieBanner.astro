@@ -1,0 +1,118 @@
+---
+// Cookie Banner
+// ------------
+// Description: Asks the visitor to accept or reject analytics cookies (Google Analytics).
+// Google Analytics is loaded only after the visitor accepts. Any element with the
+// `data-cookie-settings` attribute reopens the banner (see CookieSettingsButton.astro).
+// The banner is persisted across client-side navigation.
+
+// Components
+// - UI
+import Button from './Button.astro'
+---
+
+<section
+	id="cookie-banner"
+	class="cookie-banner"
+	role="region"
+	aria-label="Cookie consent"
+	hidden
+	transition:persist
+>
+	<div class="cookie-banner__container">
+		<p class="cookie-banner__text">
+			We use analytics cookies (Google Analytics) to understand how people use our website and make
+			it better, but only if you agree. You can change your choice at any time. Read more in our
+			<a id="cookie-banner-policy-link" href="/cookie-policy">Cookie Policy</a>.
+		</p>
+		<div class="cookie-banner__actions">
+			<Button id="cookie-banner-reject" style="secondary">Reject</Button>
+			<Button id="cookie-banner-accept" style="secondary">Accept</Button>
+		</div>
+	</div>
+</section>
+
+<script>
+	import { readConsent, writeConsent, type CookieConsentStatus } from '../scripts/cookieConsent'
+	import { enableGoogleAnalytics, disableGoogleAnalytics } from '../scripts/googleAnalytics'
+	import { googleAnalyticsMeasurementID } from '../../config/analytics'
+
+	const measurementId: string = googleAnalyticsMeasurementID
+	let opener: HTMLElement | null = null
+
+	function getBanner(): HTMLElement | null {
+		return document.getElementById('cookie-banner')
+	}
+
+	function applyConsent(status: CookieConsentStatus | null): void {
+		if (status === 'accepted') {
+			enableGoogleAnalytics(measurementId)
+		} else {
+			disableGoogleAnalytics(measurementId)
+		}
+	}
+
+	function decide(status: CookieConsentStatus): void {
+		writeConsent(status)
+		applyConsent(status)
+
+		const banner = getBanner()
+		if (banner) banner.hidden = true
+
+		if (opener?.isConnected) opener.focus()
+		opener = null
+	}
+
+	function reopen(trigger: HTMLElement): void {
+		const banner = getBanner()
+		if (!banner) return
+
+		opener = trigger
+		banner.hidden = false
+		document.getElementById('cookie-banner-policy-link')?.focus()
+	}
+
+	if (measurementId) {
+		const status = readConsent()
+		applyConsent(status)
+
+		const banner = getBanner()
+		if (banner) banner.hidden = status !== null
+
+		// Delegated, so it keeps working for elements swapped in by client-side navigation.
+		document.addEventListener('click', (event) => {
+			const target = event.target instanceof Element ? event.target : null
+			if (!target) return
+
+			if (target.closest('#cookie-banner-accept')) {
+				decide('accepted')
+			} else if (target.closest('#cookie-banner-reject')) {
+				decide('rejected')
+			} else {
+				const settingsTrigger = target.closest<HTMLElement>('[data-cookie-settings]')
+				if (settingsTrigger) reopen(settingsTrigger)
+			}
+		})
+	}
+</script>
+
+<style>
+	.cookie-banner {
+		@apply fixed inset-x-0 bottom-0 z-40 border-t border-neutral-200 bg-white px-6 py-4 text-sm text-neutral-600 shadow-[0_-2px_8px_rgba(0,0,0,0.06)] dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300;
+	}
+	.cookie-banner[hidden] {
+		@apply hidden;
+	}
+	.cookie-banner__container {
+		@apply container mx-auto flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6;
+	}
+	.cookie-banner__text {
+		@apply mb-0;
+	}
+	.cookie-banner__text a {
+		@apply font-medium text-primary-500 underline underline-offset-2 hover:text-primary-600;
+	}
+	.cookie-banner__actions {
+		@apply flex shrink-0 gap-2;
+	}
+</style>

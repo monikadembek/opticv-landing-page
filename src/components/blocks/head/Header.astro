@@ -1,7 +1,6 @@
 ---
 // Imports
 import { ClientRouter } from 'astro:transitions'
-import GoogleAnalytics from '../../scripts/googleAnalytics.astro'
 import GoogleTagManagerHead from '../../scripts/googleTagManagerHead.astro'
 import GoogleSearchConsole from '../../scripts/googleSearchConsole.astro'
 // Partials
@@ -9,7 +8,6 @@ import Seo from './partials/Seo.astro'
 // Data
 import { configData } from '../../../config/config'
 
-import { googleAnalyticsMeasurementID } from '../../../config/analytics'
 import { googleTagManagerID } from '../../../config/analytics'
 
 // Props
@@ -31,7 +29,6 @@ const {
 ---
 
 <head>
-	{googleAnalyticsMeasurementID && <GoogleAnalytics />}
 	{googleTagManagerID && <GoogleTagManagerHead />}
 	<GoogleSearchConsole />
 	<meta charset="UTF-8" />
