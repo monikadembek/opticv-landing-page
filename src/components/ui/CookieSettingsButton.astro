@@ -1,0 +1,32 @@
+---
+// Cookie Settings Button
+// ------------
+// Description: A button that reopens the cookie banner, so visitors can change their choice.
+// The label defaults to "Cookie settings" and can be replaced through the default slot.
+// Renders nothing when Google Analytics isn't configured, because there is then no banner.
+// Properties:
+// - classes: additional classes
+
+// Data
+import { googleAnalyticsMeasurementID } from '../../config/analytics'
+
+// Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+{
+	googleAnalyticsMeasurementID && (
+		<button type="button" class:list={['cookie-settings-button', classes]} data-cookie-settings>
+			<slot>Cookie settings</slot>
+		</button>
+	)
+}
+
+<style>
+	.cookie-settings-button {
+		@apply cursor-pointer;
+	}
+</style>

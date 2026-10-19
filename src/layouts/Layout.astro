@@ -6,6 +6,7 @@ import Main from '../components/ui/Main.astro'
 import Footer from '../components/ui/Footer.astro'
 import Modal from '../components/blocks/modal/SignUp.astro'
 import Header from '../components/blocks/head/Header.astro'
+import CookieBanner from '../components/ui/CookieBanner.astro'
 // import Toast from '../components/ui/Toast.astro'
 // Scripts
 import Scriprs from '../components/scripts/LocalScripts.astro'
@@ -17,6 +18,7 @@ import '@fontsource/lato'
 import '@fontsource/montserrat'
 // Data
 import { configData } from '../config/config'
+import { googleAnalyticsMeasurementID } from '../config/analytics'
 
 // Props
 type Props = {
@@ -47,6 +49,7 @@ const { title, description, ogImage, noindex, classes } = Astro.props
 		</Main>
 		<Footer />
 		<Modal />
+		{googleAnalyticsMeasurementID && <CookieBanner />}
 		<!-- <Toast /> -->
 		<Scriprs />
 	</body>

@@ -7,10 +7,12 @@
 // Components
 // - UI
 import { Icon } from 'astro-icon/components'
+import CookieSettingsButton from './CookieSettingsButton.astro'
 
 // Data
 import { socialLinks } from '../../config/socialLinks'
 import { footerNavigationData } from '../../config/footerNavigation'
+import { googleAnalyticsMeasurementID } from '../../config/analytics'
 
 const { footerAbout, footerColumns, subFooter } = footerNavigationData
 ---
@@ -34,11 +36,20 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 						<div class="footer__col">
 							<h3>{column.category}</h3>
 							<ul>
-								{column.subCategories.map((subCategory) => (
-									<li>
-										<a href={subCategory.subCategoryLink}> {subCategory.subCategory} </a>
-									</li>
-								))}
+								{column.subCategories
+									// The cookie settings button only makes sense when there is a cookie banner
+									.filter((subCategory) => !subCategory.opensCookieSettings || googleAnalyticsMeasurementID)
+									.map((subCategory) => (
+										<li>
+											{subCategory.opensCookieSettings ? (
+												<CookieSettingsButton classes="footer__link-button">
+													{subCategory.subCategory}
+												</CookieSettingsButton>
+											) : (
+												<a href={subCategory.subCategoryLink}> {subCategory.subCategory} </a>
+											)}
+										</li>
+									))}
 							</ul>
 						</div>
 					))
@@ -80,7 +91,8 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 	.footer {
 		@apply text-neutral-500 dark:text-neutral-300;
 	}
-	.footer a {
+	.footer a,
+	.footer :global(.footer__link-button) {
 		@apply transition-colors duration-300 hover:text-primary-500 focus:text-primary-600;
 	}
 	.footer__main {

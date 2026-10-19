@@ -15,7 +15,9 @@ export interface FooterAbout {
 
 export interface SubCategory {
 	subCategory: string
-	subCategoryLink: string
+	subCategoryLink?: string
+	// Renders a button that reopens the cookie banner instead of a link
+	opensCookieSettings?: boolean
 }
 
 export interface FooterColumn {
@@ -101,6 +103,10 @@ export const footerNavigationData: FooterData = {
 				{
 					subCategory: 'Cookie Policy',
 					subCategoryLink: '/cookie-policy'
+				},
+				{
+					subCategory: 'Cookie settings',
+					opensCookieSettings: true
 				}
 			]
 		}

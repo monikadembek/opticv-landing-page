@@ -370,9 +370,11 @@ To get Google to drop it from search faster, use Removals → New request in Sea
 
 ---
 
-## 29. Implement cookie banner
+## 30. Implement cookie banner
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 19.10.2026  | 19.10.2026 | Functionality
 
 Analytics can't be treated as necessary, even when the business depends on it. "Strictly necessary" has a narrow legal meaning: storage the site can't technically work without for the thing the visitor asked for, such as staying signed in, a shopping cart, or a saved dark-mode choice. The page works the same with Google Analytics blocked, so GA needs consent. This comes from the ePrivacy rules, which Poland applies through the 2024 Electronic Communications Law (Prawo komunikacji elektronicznej), and from GDPR consent standards. That law applies to opticv.net wherever the visitor is.
 
@@ -443,14 +445,33 @@ No new wording is needed. The policies already say analytics cookies are used on
   - Dark mode, phone width, and keyboard-only use.
 - Once deployed, check GA DebugView or Realtime.
 
-Before I implement, two decisions for you
 
-1. Keep GA behind the banner, or switch the landing page to cookieless analytics with no banner? If you switch, the policy text needs updating again.
-2. Is a separate choice on the landing page and in the app OK (my recommendation), or should one choice cover both sites?
+Decision: keep GA behind the banner on the landing page. Keep Posthog in the app.
+
+The cookie banner is built and working: Google Analytics now loads only after a visitor clicks Accept. The build passes with 0 errors. I tested the built site in headless Edge and all 22 checks passed:
+
+- First visit: the banner shows, with no request to Google and no _ga cookies.
+- Reject: the choice is saved, survives a reload, and GA never loads.
+- Accept (from the footer's "Cookie settings"): GA loads and sets _ga and _ga_C87NM51W9W. On later visits it loads automatically with no banner, and it doesn't load twice when moving between pages.
+- Accept, then Reject (from the Cookie Policy page): the _ga cookies are deleted and GA is switched off straight away.
+- Keyboard: reopening the banner moves focus into it, and focus goes back to the button you used afterwards.
+- Phone width: the banner fits without sideways scrolling. I also checked screenshots on a phone and in dark mode on desktop. Both buttons have the same style and the same weight.
+
+How it works
+- Banner (src/components/ui/CookieBanner.astro): fixed to the bottom of the screen until the visitor chooses, with no close button. The text matches the app's but names Google Analytics and links to the Cookie Policy.
+- Saved choice (src/components/scripts/cookieConsent.ts): same storage key and format as the app (opticv_cookie_consent), but each site keeps its own. Increase COOKIE_CONSENT_VERSION whenever you add a new tool, so everyone is asked again.
+- GA loading (src/components/scripts/googleAnalytics.ts): replaces the old script in <head> that loaded GA on every visit. Visitors who already have _ga cookies from before the banner get them removed on their next visit, until they accept.
+- "Cookie settings" button: in the footer's Legal column, in section 11 of the Privacy Policy, and in "Your choices" on the Cookie Policy page. Button.astro now also takes an optional id.
+- Without a GA ID (for example in local dev with no .env value), no banner and no "Cookie settings" button appear.
+
+Before you deploy
+- Check page views in GA: I didn't send page views manually after in-site navigation. GA4's "page changes based on browser history events" setting handles those and is on by default. After deploying, use GA's Realtime view to confirm moving between pages is counted.
+- Expect fewer visitors in GA: only visitors who accept are counted now.
+- Google Tag Manager isn't behind the banner: the template's GTM scripts are untouched and would bypass the banner if PUBLIC_GTM_ID were ever set. It's empty today, so nothing loads.
 
 ---
 
-## 30. Update 3 step optimization process in the main page
+## 31. Update 3 step optimization process in the main page
 
 **status** - todo
 
