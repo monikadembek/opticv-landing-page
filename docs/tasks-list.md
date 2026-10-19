@@ -340,15 +340,117 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ## 29. Update legal pages with content from the app's legal pages
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 19.10.2026  | 19.10.2026 | Content
 
-- Update terms page, rename to Terms of use and get content from app
-- Update Privacy Policy page with content from app
-- Update cookie policy page
+1. Update terms page, rename link in the footer from Terms of Service to Terms of Use and get content from app
+https://app.opticv.net/privacy-policy
+
+2. Update Privacy Policy page with content from app
+https://app.opticv.net/privacy-policy
+
+3. Update cookie policy page from the content about cookies in the Privacy Policy page in the app
+https://app.opticv.net/privacy-policy
+
+4. Update Privacy policy and cookie policy with the information about Google Analytics being used in the landing page
+
+To speed up indexing of new legal pages, you seem to have Search Console set up already (there's a Google verification file in the parent folder):
+1. After deploying, go to Sitemaps and resubmit https://opticv.net/sitemap-index.xml. The three new pages are in it.
+2. Paste each new URL into URL Inspection and click Request indexing. This often gets a page crawled within a day or two.
+3. Run URL Inspection on https://opticv.net/terms too, so Google sees the forward to /terms-of-use sooner. Google treats an instant forward like this as a permanent redirect.
+
+How you'll know it's done: URL Inspection reports "URL is on Google" for /terms-of-use, and /terms shows as a redirect, not an indexed page. At that point the forwarding page can go.
+
+Google may also decide never to index some legal pages, because it sees them as low value. That's harmless: what matters is that the old /terms result is gone, not that the new pages rank.
+
+After you deploy, opticv.net/terms will return a 404. Your FTP deploy step normally removes files on the server that are no longer in the build, so the old page should disappear too. It's worth opening the URL once after deploying to check.
+
+To get Google to drop it from search faster, use Removals → New request in Search Console for https://opticv.net/terms.
 
 ---
 
-## 29. Update 3 step optimization process in the main page
+## 29. Implement cookie banner
+
+**status** - todo
+
+Analytics can't be treated as necessary, even when the business depends on it. "Strictly necessary" has a narrow legal meaning: storage the site can't technically work without for the thing the visitor asked for, such as staying signed in, a shopping cart, or a saved dark-mode choice. The page works the same with Google Analytics blocked, so GA needs consent. This comes from the ePrivacy rules, which Poland applies through the 2024 Electronic Communications Law (Prawo komunikacji elektronicznej), and from GDPR consent standards. That law applies to opticv.net wherever the visitor is.
+
+Reject must be as easy as Accept. EU regulators treat these as unlawful:
+- a banner with only "OK" or "Accept";
+- "by continuing to browse you agree";
+- a Reject option hidden behind a "Settings" step;
+- Reject shown as a faint link next to a bold Accept button.
+
+The usual standard is two equal buttons on the first screen, which is what your app already does. Data protection authorities have fined companies specifically for making rejection harder than acceptance.
+
+If you need numbers even from people who reject, the honest option is a cookieless analytics tool, not making GA mandatory. Plausible, Umami, or PostHog in cookieless mode store nothing on the device. Many EU sites run those without a banner. The legal position isn't fully settled, but it's much stronger than forcing GA.
+
+This is my reading of the rules, not legal advice. If the business case for mandatory analytics is strong, it's worth a short check with a Polish privacy lawyer. But "accept or leave" for analytics is the specific pattern regulators have ruled against.
+
+Plan: cookie banner for opticv.net
+
+The banner will match the app's behaviour: Accept and Reject as equal buttons, the choice saved in the browser, and a "Cookie settings" link to reopen it.
+
+1. Don't load GA until the visitor accepts
+
+- Change src/components/scripts/googleAnalytics.astro so the gtag script loads only after consent. Today it loads in <head> on every visit.
+- If the visitor has already accepted, GA loads on page load as it does now.
+- I won't use Google Consent Mode. It only matters for Google Ads features, which you don't use. "Advanced" Consent Mode still sends pings to Google before consent, which is the risky part.
+
+2. Store the consent choice (src/components/scripts/cookieConsent.ts)
+
+- Use the same key and format as the app: opticv_cookie_consent → { status: 'accepted' | 'rejected', version: 1, decidedAt } in localStorage, with try/catch around reads and writes.
+- Expose small helpers: read the status, accept, reject, and reopen the banner. The banner, GA loader and settings link all use these.
+- Not shared with the app. opticv.net and app.opticv.net have separate localStorage, so a visitor gets asked once on each site. Sharing the choice would need a cookie set on .opticv.net and changes to the app. I don't think that's worth it now, since the two sites use different tools (GA here, PostHog in the app).
+- Increase the version number whenever you add a new tool, so everyone gets asked again.
+
+3. Banner component (src/components/ui/CookieBanner.astro)
+
+- A bar fixed to the bottom of the screen, styled to match the site (white or neutral background, dark-mode support, pink primary colour).
+- Text, close to the app's: "We use analytics cookies (Google Analytics) to understand how people use our website and make it better, but only if you agree. You can change your choice at any time. Read more in our Cookie Policy."
+- Buttons: Reject and Accept, same size and same style.
+- It stays visible until the visitor chooses. It has no close (×) button, because closing it without choosing would leave the consent question unanswered.
+- Accessibility, like the app: role="region" and aria-label="Cookie consent". When the banner is reopened, focus moves into it, and goes back to the link that opened it after a choice.
+- Add it to src/layouts/Layout.astro next to <Modal />.
+
+4. Handle the site's page navigation
+
+The site uses Astro's ClientRouter, which changes pages without a full reload. I'll run the banner and GA logic on astro:page-load so they work after every navigation, and use transition:persist so the banner doesn't flicker. I'll also make sure GA loads only once and still records page views after these in-site navigations.
+
+5. Changing your mind
+
+- Accept → Reject: stop GA (window['ga-disable-G-…'] = true) and delete the _ga / _ga_* cookies. GA sets these on .opticv.net, so they must be deleted on that domain as well as on the current host.
+- Reject → Accept: load GA immediately.
+
+6. "Cookie settings" link to reopen the banner
+
+- In the footer's Legal column. Footer.astro only supports plain links today, so it needs a small change to allow a button entry.
+- In the Cookie Policy's "Your choices" section, and in Privacy Policy section 11, the same place the app has its button.
+
+7. Policy text
+
+No new wording is needed. The policies already say analytics cookies are used only with consent, and the banner makes that true. I'll only add the "Cookie settings" button described in step 6.
+
+8. Checks
+
+- npm run build has no type errors.
+- In a browser, with the DevTools Network and Application tabs:
+  - First visit: no request to googletagmanager.com and no _ga cookies.
+  - Reject: still none, and the banner stays hidden after reload.
+  - Accept: GA loads, the _ga cookies appear, and page views are recorded, including after in-site navigation.
+  - Reopen and Reject: the cookies are gone and GA stops.
+  - Dark mode, phone width, and keyboard-only use.
+- Once deployed, check GA DebugView or Realtime.
+
+Before I implement, two decisions for you
+
+1. Keep GA behind the banner, or switch the landing page to cookieless analytics with no banner? If you switch, the policy text needs updating again.
+2. Is a separate choice on the landing page and in the app OK (my recommendation), or should one choice cover both sites?
+
+---
+
+## 30. Update 3 step optimization process in the main page
 
 **status** - todo
 

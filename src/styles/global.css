@@ -82,6 +82,49 @@ main a {
 	@apply text-lg leading-relaxed [&_blockquote]:text-xl [&_blockquote]:leading-loose;
 }
 
+/* Legal documents (terms, privacy, cookies) */
+.legal-doc {
+	@apply mx-auto max-w-3xl leading-relaxed;
+}
+.legal-doc h2 {
+	@apply mb-4 mt-12 scroll-mt-32 text-2xl lg:text-3xl;
+}
+.legal-doc h3 {
+	@apply mb-3 mt-8 text-lg lg:text-xl;
+}
+.legal-doc p,
+.legal-doc ul {
+	@apply mb-4;
+}
+.legal-doc li {
+	@apply mb-2 ml-5 list-disc marker:text-primary-500;
+}
+.legal-doc strong {
+	@apply font-semibold text-neutral-700 dark:text-neutral-200;
+}
+.legal-doc a {
+	@apply underline underline-offset-2;
+}
+.legal-doc .legal-note {
+	@apply mb-6 rounded border-l-4 border-primary-500 bg-neutral-50 px-5 py-4 dark:bg-neutral-900;
+}
+.legal-doc .table-wrapper {
+	@apply mb-6 overflow-x-auto;
+}
+.legal-doc table {
+	@apply w-full border-collapse text-sm;
+}
+.legal-doc th,
+.legal-doc td {
+	@apply border border-neutral-200 px-3 py-2 text-left align-top dark:border-neutral-700;
+}
+.legal-doc th {
+	@apply bg-neutral-50 font-semibold text-neutral-700 dark:bg-neutral-900 dark:text-neutral-200;
+}
+.legal-doc .withdrawal-form {
+	@apply rounded-md border border-dashed border-neutral-300 px-5 py-4 dark:border-neutral-600 [&_p]:mb-3 [&_p:last-child]:mb-0;
+}
+
 /* Scroll animations */
 /* To disable scroll animations remove the class "sroll-animation" from root html in the layout file */
 .scroll-animation .col {
