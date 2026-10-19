@@ -340,11 +340,22 @@ we deploy app to hostinger which supports only static pages, and from there we w
 
 ## 29. Update legal pages with content from the app's legal pages
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **in progress** | 19.10.2026  | 19.10.2026 | Content
 
-- Update terms page, rename to Terms of use and get content from app
-- Update Privacy Policy page with content from app
-- Update cookie policy page
+1. Update terms page, rename link in the footer from Terms of Service to Terms of Use and get content from app
+https://app.opticv.net/privacy-policy
+
+2. Update Privacy Policy page with content from app
+https://app.opticv.net/privacy-policy
+
+3. Update cookie policy page from the content about cookies in the Privacy Policy page in the app
+https://app.opticv.net/privacy-policy
+
+4. Update Privacy policy and cookie policy with the information about Google Analytics being used in the landing page
+
+5. Implement the cookie banner.
 
 ---
 
