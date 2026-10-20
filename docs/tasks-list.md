@@ -482,7 +482,26 @@ Button Optimize my CV in the CTA section opens app in the current app but is sho
 
 ---
 
-## 32. Update 3 step optimization process in the main page
+## 32. Update terms of use with information that subscription is automatically canceled when user deletes account
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 20.10.2026  | 20.10.2026 | Content
+
+Update Terms of use document with the information that when user deletes account all its Stripe subscriptions will be automatically canceled.
+Take text from Terms of use in the OptiCV app.
+Section: Ending the aggreement:
+By you: you can stop using the Service and delete your
+account at any time in Settings. Deleting your account permanently
+deletes your data, as described in the Privacy Policy. If you have a
+paid plan, deleting your account cancels it immediately. It won't renew
+and you won't be charged again. The unused part of the current billing
+period is not refunded, but your right of withdrawal (section 7) still
+applies.
+
+---
+
+## 33. Update 3 step optimization process in the main page
 
 **status** - todo
 
