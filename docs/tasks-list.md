@@ -513,13 +513,13 @@ applies.
 
 ---
 
-## 34. Buttons in the pricing tables don't do anything
+## 34. Fix buttons in the pricing tables - currently they only reload main page
 
 | Status   | Date Start  | Date End   | Task Type
 | -------- | ----------- | ---------- | ------------
-| **todo** | 20.10.2026  | 20.10.2026 | Content
+| **done** | 20.10.2026  | 20.10.2026 | Content
 
-Currently buttons in the pricing tables don't do onything, the just reload the main page.
+Currently buttons in the pricing tables don't do onything, they just reload the main page.
 - Get started for free button should navigate to the app
 - Get basic package and Get pro package buttons should navigate to the settings page in the app
 

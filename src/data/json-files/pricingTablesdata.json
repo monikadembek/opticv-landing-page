@@ -9,7 +9,7 @@
 			"priceMontly": "0",
 			"priceLabelMontly": "",
 			"buttonName": "Get started for free",
-			"buttonLink": "/"
+			"buttonLink": "https://app.opticv.net"
 		},
 		"body": {
 			"listItems": [
@@ -40,7 +40,7 @@
 			"priceMontly": "9.90",
 			"priceLabelMontly": "month",
 			"buttonName": "Get Basic Package",
-			"buttonLink": "/"
+			"buttonLink": "https://app.opticv.net/settings"
 		},
 		"body": {
 			"listItems": [
@@ -71,7 +71,7 @@
 			"priceMontly": "19.90",
 			"priceLabelMontly": "month",
 			"buttonName": "Get Pro Package",
-			"buttonLink": "/"
+			"buttonLink": "https://app.opticv.net/settings"
 		},
 		"body": {
 			"listItems": [
