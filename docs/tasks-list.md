@@ -501,12 +501,27 @@ applies.
 
 ---
 
-## 33. Update 3 step optimization process in the main page
+## 33. Show detailed How it works section with 7 steps guide on how to use the app on the main page
 
-**status** - todo
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 20.10.2026  | 20.10.2026 | Content
 
-- update screenshots from current version of the app
-- compare current 3 step process description with the tour guide in the app and decide what to update, only the pics or maybe take the steps from guide in the app
+1. Create new component HowItWorksDetailed with 7 steps guide on how to use the app, take the content of the steps and copy the photos from WelcomeGuideModal Component from the ../opticv-app/apps/opticv-web/src/app/shared/welcome-guide-modal/
+2. Display that component on the main page, below the HowItWorks component.
+3. Update 3 step optimization process in the main page not to repeat what is already in the new detailed how it works section, remove the screenshots.
+
+---
+
+## 34. Fix buttons in the pricing tables - currently they only reload main page
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 20.10.2026  | 20.10.2026 | Content
+
+Currently buttons in the pricing tables don't do onything, they just reload the main page.
+- Get started for free button should navigate to the app
+- Get basic package and Get pro package buttons should navigate to the settings page in the app
 
 ---
 
