@@ -525,6 +525,32 @@ Currently buttons in the pricing tables don't do onything, they just reload the 
 
 ---
 
+## 35. Add section for beta testers on main page
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **done** | 23.10.2026  | 23.10.2026 | Content
+
+Prepare section on main page that will contain link to form with questions for potential beta testers. This should be first section on the page. It should be visible and draw user attention. It should contain button to go to the form.
+
+Section title: Join the OptiCV beta
+
+Section Content:
+
+I'm looking for 20 people who are actively job hunting to test OptiCV app, an AI tool that tailors your CV to each job offer.
+
+What You will get: 2 months of the Basic plan for free. 
+
+What will be required of You: using the app while you apply, a short survey after 2 weeks and some written feedback in the form of email or chat.
+
+If you are interested please fill the form.
+
+Spots are limited. I'll reply to everyone within a few days.
+
+Link to the form: https://forms.gle/exd6PyFatr8BpUDx5
+
+----
+
 ## Add blog post about the linkedin profile boost feature
 
 - add blog post about how important it is to have optimized linkedin page,
