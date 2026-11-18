@@ -21,9 +21,9 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'OptiCV - AI-Powered CV Optimization',
+	siteTitle: 'CV Optimization for ATS | Tailor Your CV to Any Job | OptiCV',
 	siteDescription:
-		"OptiCV rewrites your CV for the exact job you're chasing, so it passes ATS filters and lands on a real recruiter's desk. Upload your CV, paste the job ad, get results in under 5 minutes.",
+		'Optimize your CV for ATS and tailor it to any job description in minutes. OptiCV checks keywords, improves formatting, and helps you land more interviews. Free to start.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/opticv-logo-icon.svg',

@@ -1,6 +1,7 @@
 ---
 // Components
 import Layout from '../layouts/Layout.astro'
+import HomeIntro from '../components/blocks/hero/HomeIntro.astro'
 import BetaTesters from '../components/blocks/beta/BetaTesters.astro'
 import Hero from '../components/blocks/hero/HomeCTA.astro'
 import StatsBand from '../components/blocks/stats/StatsBand.astro'
@@ -20,6 +21,7 @@ const SEO = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
+	<HomeIntro />
 	<BetaTesters />
 	<Hero />
 	<StatsBand />

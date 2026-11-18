@@ -1,0 +1,71 @@
+---
+// Home intro — SEO-focused introduction to OptiCV
+
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import { Icon } from 'astro-icon/components'
+
+const highlights = [
+	{
+		icon: 'document-chart-bar',
+		label: 'Gaps found, readability fixed',
+		text: 'The platform highlights missing keywords, suggests improvements to your professional summary and achievements, and helps you present your experience in a clearer, more relevant way. It also improves ATS readability by focusing on straightforward formatting, role-specific terminology, and the information recruiters and applicant tracking systems are most likely to scan.'
+	},
+	{
+		icon: 'cursor-arrow-ripple',
+		label: 'Tailored to the exact job',
+		text: 'Rather than using a generic template, OptiCV tailors your CV to the exact job you are applying for. It helps you align your achievements with the employer’s requirements, strengthen relevant skills, and remove wording that may not support your application.'
+	},
+	{
+		icon: 'bolt',
+		label: 'Results in minutes',
+		text: 'In minutes, you receive practical recommendations and an optimized version of your CV designed to improve relevance, pass ATS filters more effectively, and make a stronger impression on hiring managers. Whether you are applying for your first role, changing careers, or targeting a competitive position, OptiCV makes CV optimization faster, more focused, and easier to act on.'
+	}
+]
+---
+
+<Section
+	id="home-intro"
+	classes="bg-gradient-to-b from-primary-50/70 to-white dark:from-primary-950/20 dark:to-neutral-900"
+>
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center">
+			<span
+				class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white px-4 py-1.5 text-sm font-medium text-primary-700 dark:border-primary-800 dark:bg-primary-950/40 dark:text-primary-300"
+			>
+				<Icon name="check-circle" class="h-4 w-4" />
+				Job-specific CV optimization
+			</span>
+			<h1 class="text-pretty">
+				<strong>AI-Powered CV Optimization</strong> for ATS and Job Applications
+			</h1>
+			<p class="mx-auto max-w-3xl text-xl leading-relaxed text-neutral-600 dark:text-neutral-300">
+				OptiCV helps job seekers optimize their CV for a specific vacancy, not just improve it in
+				general. Upload your CV, paste the job description, and OptiCV analyzes the role to identify
+				the skills, experience, and keywords that matter most for that position.
+			</p>
+		</Col>
+		<Col span="2" />
+	</Row>
+	<Row>
+		{
+			highlights.map((item) => (
+				<Col span="4" classes="mt-12 flex">
+					<div class="flex h-full flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+						<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 dark:bg-primary-950/40">
+							<Icon name={item.icon} class="h-6 w-6 text-primary-600 dark:text-primary-400" />
+						</div>
+						<p class="mb-0 font-headings text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+							{item.label}
+						</p>
+						<p class="mb-0 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+							{item.text}
+						</p>
+					</div>
+				</Col>
+			))
+		}
+	</Row>
+</Section>

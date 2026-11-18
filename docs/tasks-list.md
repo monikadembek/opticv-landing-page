@@ -551,6 +551,24 @@ Link to the form: https://forms.gle/exd6PyFatr8BpUDx5
 
 ----
 
+## 36. Seo improvements
+
+| Status   | Date Start  | Date End   | Task Type
+| -------- | ----------- | ---------- | ------------
+| **in progress** | 18.11.2026  | 18.11.2026 | Content
+
+Make changes to improve SEO
+
+- add new page title and page description
+- remove period at the end of all h1, h2, h3, h4 tags
+- add new first section with h1
+- rename some of h2 tags
+- add .htaccess redirect 
+- add new alt to images with keywords
+
+
+---
+
 ## Add blog post about the linkedin profile boost feature
 
 - add blog post about how important it is to have optimized linkedin page,
@@ -564,14 +582,6 @@ include information about linkedin feature
 **status** - todo
 
 - add about page
-
----
-
-## Seo improvements
-
-**status - todo**
-
-- make changes to improve SEO
 
 ---
 
