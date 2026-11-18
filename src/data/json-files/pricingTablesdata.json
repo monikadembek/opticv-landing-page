@@ -2,7 +2,7 @@
 	{
 		"header": {
 			"title": "Free",
-			"subtitle": "Everything you need to get started.",
+			"subtitle": "Everything you need to get started",
 			"currency": "$",
 			"price": "0",
 			"priceLabel": "monthly",
@@ -33,7 +33,7 @@
 	{
 		"header": {
 			"title": "Basic",
-			"subtitle": "For regular job seekers.",
+			"subtitle": "For regular job seekers",
 			"currency": "$",
 			"price": "9.90",
 			"priceLabel": "monthly",
@@ -64,7 +64,7 @@
 	{
 		"header": {
 			"title": "Pro",
-			"subtitle": "For serious job seekers.",
+			"subtitle": "For serious job seekers",
 			"currency": "$",
 			"price": "19.90",
 			"priceLabel": "monthly",
