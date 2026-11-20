@@ -38,7 +38,19 @@ const {
 ---
 
 <Card classes={classes}>
-	{image && <img src={image} alt={title} width={600} height={400} loading="lazy" decoding="async" />}
+	{
+		image && (
+			<img
+				src={image}
+				alt={title}
+				width={600}
+				height={400}
+				loading="lazy"
+				decoding="async"
+				class="post-image"
+			/>
+		)
+	}
 	<CardBody>
 		<h3 class="post-title">
 			<a href={link}>{title}</a>
@@ -59,6 +71,9 @@ const {
 </Card>
 
 <style>
+	.post-image {
+		@apply aspect-[3/2] w-full object-cover;
+	}
 	.post-title {
 		@apply mb-0 text-xl [&_a]:text-inherit;
 	}

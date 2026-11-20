@@ -565,6 +565,7 @@ Make changes to improve SEO
 - rename some of h2 tags
 - add .htaccess redirect 
 - add new alt to images with keywords
+- add blog articles
 
 
 ---
